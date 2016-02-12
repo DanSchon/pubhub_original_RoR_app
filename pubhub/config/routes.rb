@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/sign_in', to: "sessions#new"
 
   resources :users, only: [:create]
+  resources :sessions, only: [:create]
 end

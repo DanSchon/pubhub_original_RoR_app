@@ -47,4 +47,11 @@ describe PubsController do
       end
     end
   end
+  describe "GET show" do 
+    it "sets @pub" do 
+      pub = Fabricate(:pub)
+      get :show, id: pub.id
+      expect(assigns(:pub)).to eq(pub)
+    end
+  end
 end

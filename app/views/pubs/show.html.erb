@@ -1,0 +1,7 @@
+<%= render 'shared/header', header: @pub.title %>
+<p>
+  <%= @pub.content %>
+</p>
+<p>posted by <%= link_to @pub.user.full_name, "pub.user" %>. <%= link_to "PDF", fix_url(@pub.url) %>
+</p>
+<hr/>

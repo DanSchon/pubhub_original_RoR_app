@@ -17,5 +17,6 @@ class PubsController < ApplicationController
   end
   def show
     @pub = Pub.find(params[:id])
+    @review = Review.new
   end
 end

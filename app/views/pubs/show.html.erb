@@ -5,3 +5,24 @@
 <p>posted by <%= link_to @pub.user.full_name, "pub.user" %>. <%= link_to "PDF", fix_url(@pub.url) %>
 </p>
 <hr/>
+
+<div class='well'>
+  <%= form_for [@pub, @review] do |f| %>
+    <div class='control-group'>
+      <%= f.label :body, "Leave a review" %>
+      <br>
+      <%= f.text_area :body, rows: 5, class: "form-control" %>
+    </div>
+    <%= f.submit "Create review", class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<h5>Reviews:</h5>
+
+<% @pub.reviews.each do |review| %>
+  <div class="well span8">
+    <em>"<%= review.body %>"</em>
+    <br/>
+    <span class='quiet'>by </span><%= review.user.full_name %>
+  </div>
+<% end %>

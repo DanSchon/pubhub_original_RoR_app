@@ -53,5 +53,10 @@ describe PubsController do
       get :show, id: pub.id
       expect(assigns(:pub)).to eq(pub)
     end
+    it "sets @review" do 
+      pub = Fabricate(:pub)
+      get :show, id: pub.id
+      expect(assigns(:review)).to be_instance_of(Review)
+    end
   end
 end

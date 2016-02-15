@@ -1,0 +1,17 @@
+<div class='well'>
+  <%= form_for @pub do |f| %>
+    <div class='control-group'>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class='control-group'>
+      <%= f.label :url, "PDF url" %>
+      <%= f.text_field :url %>
+    </div>
+    <div class='control-group'>
+      <%= f.label :content, "Abstract" %>
+      <%= f.text_area :content, rows: 5 %>
+    </div>
+    <%= f.submit 'Upload Pub', class: 'btn btn-primary' %>
+  <% end %>
+</div>

@@ -11274,3 +11274,505 @@ Processing by ReviewsController#create as HTML
 Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.5ms)
   [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews"[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'District Communications Administrator' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'District Communications Administrator' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "District Communications Administrator"], ["url", "http://quitzon.io/adrienne"], ["content", "Laborum tempore rerum. Enim dicta inventore est sed tempora. Culpa expedita fugit. Velit rem exercitationem sint perferendis illum quos assumenda."], ["created_at", "2016-02-15 23:37:20.129674"], ["updated_at", "2016-02-15 23:37:20.129674"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Principal Division Engineer' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Principal Division Engineer' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Principal Division Engineer"], ["url", "http://shields.name/mallory.brekke"], ["content", "Expedita officiis alias vel autem aut totam. Laborum veritatis culpa aut pariatur sed nam quo. Nesciunt sequi voluptas."], ["created_at", "2016-02-15 23:37:20.135247"], ["updated_at", "2016-02-15 23:37:20.135247"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.4ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Dynamic Integration Producer", "url"=>"http://weinat.info/edwardo.wisoky", "content"=>"Laboriosam labore id modi saepe dolorum. Aut nulla eum. Et quam voluptas nesciunt placeat cupiditate. Sint suscipit vitae et neque. In minima eveniet occaecati."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Integration Producer' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Dynamic Integration Producer"], ["url", "http://weinat.info/edwardo.wisoky"], ["content", "Laboriosam labore id modi saepe dolorum. Aut nulla eum. Et quam voluptas nesciunt placeat cupiditate. Sint suscipit vitae et neque. In minima eveniet occaecati."], ["created_at", "2016-02-15 23:37:20.228176"], ["updated_at", "2016-02-15 23:37:20.228176"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Forward Brand Technician", "url"=>"http://bailey.net/claudia_goldner", "content"=>"Unde magni nihil aut aut sint. Inventore incidunt ipsam dolorum non. Et vel quis aliquid sit nemo fuga. Et ut excepturi ut numquam qui."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Forward Brand Technician' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Forward Brand Technician"], ["url", "http://bailey.net/claudia_goldner"], ["content", "Unde magni nihil aut aut sint. Inventore incidunt ipsam dolorum non. Et vel quis aliquid sit nemo fuga. Et ut excepturi ut numquam qui."], ["created_at", "2016-02-15 23:37:20.236802"], ["updated_at", "2016-02-15 23:37:20.236802"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'israel@veum.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'israel@veum.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$CibCJUEG3wmYpEdveaqvMu4lwgHfo1WaKkMzjNZE.5DOdOLtKLOka"], ["email", "israel@veum.com"], ["full_name", "Lue Nicolas"], ["created_at", "2016-02-15 23:37:20.253405"], ["updated_at", "2016-02-15 23:37:20.253405"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Direct Interactions Engineer", "url"=>"http://hoegerbashirian.co/ashlee_lowe", "content"=>"Et veniam aut et sit omnis ea. Vel deserunt quis sit a illo. Consequatur quibusdam sint ut sit repudiandae. Eius non quae dolor cupiditate earum."}, "user_id"=>"147"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 147]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Direct Interactions Engineer' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Direct Interactions Engineer"], ["url", "http://hoegerbashirian.co/ashlee_lowe"], ["content", "Et veniam aut et sit omnis ea. Vel deserunt quis sit a illo. Consequatur quibusdam sint ut sit repudiandae. Eius non quae dolor cupiditate earum."], ["user_id", 147], ["created_at", "2016-02-15 23:37:20.264255"], ["updated_at", "2016-02-15 23:37:20.264255"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/home
+Completed 302 Found in 10ms (ActiveRecord: 1.1ms)
+  [1m[36mPub Load (0.5ms)[0m  [1mSELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "pubs"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Legacy Infrastructure Agent' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Legacy Infrastructure Agent' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Legacy Infrastructure Agent"], ["url", "http://sengerhoeger.net/derrick"], ["content", "Deleniti ipsam neque harum ducimus culpa exercitationem. Harum quia omnis voluptas quos. Consequatur delectus ea. Et velit quam."], ["created_at", "2016-02-15 23:37:20.297107"], ["updated_at", "2016-02-15 23:37:20.297107"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#show as HTML
+  Parameters: {"id"=>"227"}
+  [1m[36mPub Load (0.2ms)[0m  [1mSELECT  "pubs".* FROM "pubs" WHERE "pubs"."id" = $1 LIMIT 1[0m  [["id", 227]]
+  Rendered pubs/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 53ms (Views: 1.8ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Internal Integration Designer' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Internal Integration Designer' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Internal Integration Designer"], ["url", "http://bogansenger.name/anastasia"], ["content", "Consequatur voluptatibus placeat aliquam accusantium. Beatae cumque ducimus velit ut quis. Magnam veritatis est dolores ullam cumque amet."], ["created_at", "2016-02-15 23:37:20.358450"], ["updated_at", "2016-02-15 23:37:20.358450"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#show as HTML
+  Parameters: {"id"=>"228"}
+  [1m[36mPub Load (0.2ms)[0m  [1mSELECT  "pubs".* FROM "pubs" WHERE "pubs"."id" = $1 LIMIT 1[0m  [["id", 228]]
+  Rendered pubs/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Applications Producer' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Applications Producer' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Dynamic Applications Producer"], ["url", "http://pfannerstill.net/perry"], ["content", "Ut sed architecto nihil. Sed aliquam et cumque. Id dolorum est. Magni provident recusandae. Aut praesentium veniam tempore quia."], ["created_at", "2016-02-15 23:37:20.368542"], ["updated_at", "2016-02-15 23:37:20.368542"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ReviewsController#create as HTML
+  Parameters: {"review"=>{"body"=>"Eveniet rerum velit eligendi dolores dolores ea ex. Ut voluptatem ut aut et doloribus autem. Nobis magnam dolorem quis ad quo rem beatae. Aperiam placeat atque consequatur doloribus a rerum. Autem laborum commodi sit."}, "pub_id"=>"229"}
+  [1m[36mPub Load (0.2ms)[0m  [1mSELECT  "pubs".* FROM "pubs" WHERE "pubs"."id" = $1 LIMIT 1[0m  [["id", 229]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "reviews" ("body", "pub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["body", "Eveniet rerum velit eligendi dolores dolores ea ex. Ut voluptatem ut aut et doloribus autem. Nobis magnam dolorem quis ad quo rem beatae. Aperiam placeat atque consequatur doloribus a rerum. Autem laborum commodi sit."], ["pub_id", 229], ["created_at", "2016-02-15 23:37:20.381288"], ["updated_at", "2016-02-15 23:37:20.381288"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/pubs/229
+Completed 302 Found in 12ms (ActiveRecord: 0.9ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Internal Creative Officer' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Internal Creative Officer' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Internal Creative Officer"], ["url", "http://kovacek.biz/victoria.spencer"], ["content", "Aut rerum quia necessitatibus doloribus. Illo praesentium ut eos reiciendis. Harum qui iste."], ["created_at", "2016-02-15 23:37:20.389794"], ["updated_at", "2016-02-15 23:37:20.389794"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReviewsController#create as HTML
+  Parameters: {"review"=>{"body"=>"Et illum rerum harum. Tenetur non qui nam. Nemo libero et expedita dolores."}, "pub_id"=>"230"}
+  [1m[35mPub Load (0.2ms)[0m  SELECT  "pubs".* FROM "pubs" WHERE "pubs"."id" = $1 LIMIT 1  [["id", 230]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("body", "pub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["body", "Et illum rerum harum. Tenetur non qui nam. Nemo libero et expedita dolores."], ["pub_id", 230], ["created_at", "2016-02-15 23:37:20.394985"], ["updated_at", "2016-02-15 23:37:20.394985"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/pubs/230
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "reviews"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Principal Accounts Supervisor' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Principal Accounts Supervisor' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Principal Accounts Supervisor"], ["url", "http://jacobs.org/lamar"], ["content", "Aut totam aut perferendis iusto aspernatur. Earum et voluptatem aut amet cum. Quas quam corrupti tenetur. Veniam dolores omnis et doloribus minima nihil nostrum. Deleniti ad qui."], ["created_at", "2016-02-15 23:37:20.403979"], ["updated_at", "2016-02-15 23:37:20.403979"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReviewsController#create as HTML
+  Parameters: {"review"=>{"body"=>"Delectus et debitis amet sit in. Iusto ullam officiis quibusdam voluptatem maxime. Vitae voluptas eligendi. Inventore veniam ea et consequatur alias maxime ea. Omnis veniam reprehenderit beatae fuga."}, "pub_id"=>"231"}
+  [1m[35mPub Load (0.2ms)[0m  SELECT  "pubs".* FROM "pubs" WHERE "pubs"."id" = $1 LIMIT 1  [["id", 231]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("body", "pub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["body", "Delectus et debitis amet sit in. Iusto ullam officiis quibusdam voluptatem maxime. Vitae voluptas eligendi. Inventore veniam ea et consequatur alias maxime ea. Omnis veniam reprehenderit beatae fuga."], ["pub_id", 231], ["created_at", "2016-02-15 23:37:20.409089"], ["updated_at", "2016-02-15 23:37:20.409089"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/pubs/231
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35mReview Load (0.3ms)[0m  SELECT  "reviews".* FROM "reviews"  ORDER BY "reviews"."id" ASC LIMIT 1
+  [1m[36mPub Load (0.2ms)[0m  [1mSELECT  "pubs".* FROM "pubs" WHERE "pubs"."id" = $1 LIMIT 1[0m  [["id", 231]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'chanelle_boehm@jast.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'chanelle_boehm@jast.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$LTGrjguBWM76WJQWuhws5enxWxYtJLBHrO8TdrPjQDD1FM4//ZisO"], ["email", "chanelle_boehm@jast.com"], ["full_name", "Jazlyn Bauch"], ["created_at", "2016-02-15 23:37:20.420436"], ["updated_at", "2016-02-15 23:37:20.420436"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Central Implementation Developer' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Central Implementation Developer' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Central Implementation Developer"], ["url", "http://batz.org/kadin"], ["content", "Quia sed quae veritatis dolore error provident. Voluptatem quae fugit ut. Maxime et sint non."], ["created_at", "2016-02-15 23:37:20.424893"], ["updated_at", "2016-02-15 23:37:20.424893"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReviewsController#create as HTML
+  Parameters: {"review"=>{"body"=>"Hic voluptas officia animi qui et laboriosam iste. At officiis voluptatum rerum. Expedita perferendis minima animi."}, "pub_id"=>"232"}
+  [1m[35mPub Load (0.2ms)[0m  SELECT  "pubs".* FROM "pubs" WHERE "pubs"."id" = $1 LIMIT 1  [["id", 232]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 148]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("body", "user_id", "pub_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "Hic voluptas officia animi qui et laboriosam iste. At officiis voluptatum rerum. Expedita perferendis minima animi."], ["user_id", 148], ["pub_id", 232], ["created_at", "2016-02-15 23:37:20.431269"], ["updated_at", "2016-02-15 23:37:20.431269"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/pubs/232
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  ORDER BY "reviews"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 148]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Integration Director' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Integration Director' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Dynamic Integration Director"], ["url", "http://rodriguez.net/orlando"], ["content", "Sunt sit nihil. Quia animi ut id assumenda dolorum commodi quo. Saepe at nostrum. Dolorem doloribus modi nisi rerum."], ["created_at", "2016-02-15 23:37:20.441998"], ["updated_at", "2016-02-15 23:37:20.441998"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReviewsController#create as HTML
+  Parameters: {"review"=>{"body"=>nil}, "pub_id"=>"233"}
+  [1m[35mPub Load (0.1ms)[0m  SELECT  "pubs".* FROM "pubs" WHERE "pubs"."id" = $1 LIMIT 1  [["id", 233]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."pub_id" = $1[0m  [["pub_id", 233]]
+  Rendered pubs/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 3.7ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Global Accountability Specialist' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Global Accountability Specialist' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Global Accountability Specialist"], ["url", "http://marquardt.biz/bud"], ["content", "Unde et voluptate sint voluptatem voluptatem dolorem libero. Voluptate et voluptatem quia ex. Dolorem reprehenderit facilis. Et ea id."], ["created_at", "2016-02-15 23:37:20.459178"], ["updated_at", "2016-02-15 23:37:20.459178"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reviews" ("pub_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["pub_id", 234], ["body", "Facilis dolorem et et sunt doloremque in ut. Occaecati laboriosam est. Fugiat dolorem voluptatum quia amet. Ut libero aut. Sapiente blanditiis voluptatem ullam ut."], ["created_at", "2016-02-15 23:37:20.462148"], ["updated_at", "2016-02-15 23:37:20.462148"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReviewsController#create as HTML
+  Parameters: {"review"=>{"body"=>nil}, "pub_id"=>"234"}
+  [1m[35mPub Load (0.2ms)[0m  SELECT  "pubs".* FROM "pubs" WHERE "pubs"."id" = $1 LIMIT 1  [["id", 234]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."pub_id" = $1[0m  [["pub_id", 234]]
+  Rendered pubs/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Global Factors Associate' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Global Factors Associate' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Global Factors Associate"], ["url", "http://botsford.co/christopher"], ["content", "Eligendi quaerat ipsa. Dolorem ea voluptas rerum dolores distinctio inventore qui. Veritatis voluptas dolores. Et natus impedit repellat. Vitae labore inventore eum qui repellendus."], ["created_at", "2016-02-15 23:37:20.475285"], ["updated_at", "2016-02-15 23:37:20.475285"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by ReviewsController#create as HTML
+  Parameters: {"review"=>{"body"=>nil}, "pub_id"=>"235"}
+  [1m[36mPub Load (0.1ms)[0m  [1mSELECT  "pubs".* FROM "pubs" WHERE "pubs"."id" = $1 LIMIT 1[0m  [["id", 235]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."pub_id" = $1  [["pub_id", 235]]
+  Rendered pubs/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Chief Infrastructure Producer' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Chief Infrastructure Producer' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Chief Infrastructure Producer"], ["url", "http://mckenzie.net/westley"], ["content", "Mollitia sequi qui ipsam. Repellat consequatur qui sint dolorem. Quaerat quibusdam tempore dolores iste."], ["created_at", "2016-02-15 23:37:20.487886"], ["updated_at", "2016-02-15 23:37:20.487886"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReviewsController#create as HTML
+  Parameters: {"review"=>{"body"=>nil}, "pub_id"=>"236"}
+  [1m[35mPub Load (0.1ms)[0m  SELECT  "pubs".* FROM "pubs" WHERE "pubs"."id" = $1 LIMIT 1  [["id", 236]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."pub_id" = $1[0m  [["pub_id", 236]]
+  Rendered pubs/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ena@rohan.io' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ena@rohan.io' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$q/XaqPr1sE5Yty1NXUgcJen/X3VIvA0dzqvH88uTKU1DELwF40v7O"], ["email", "ena@rohan.io"], ["full_name", "Donny Koss"], ["created_at", "2016-02-15 23:37:20.502106"], ["updated_at", "2016-02-15 23:37:20.502106"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"full_name"=>"Donny Koss", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."full_name" = $1 LIMIT 1  [["full_name", "Donny Koss"]]
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joelle@donnelly.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joelle@donnelly.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$/cIkOfI9QNZDXEhy0MeBAOKqApFYTTxwfG0K36jwS0fnmD5qHzC7K"], ["email", "joelle@donnelly.org"], ["full_name", "Howard Rowe Sr."], ["created_at", "2016-02-15 23:37:20.516173"], ["updated_at", "2016-02-15 23:37:20.516173"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"full_name"=>"Howard Rowe Sr.", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."full_name" = $1 LIMIT 1  [["full_name", "Howard Rowe Sr."]]
+Redirected to http://test.host/home
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ashlee@whitefranecki.io' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ashlee@whitefranecki.io' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$4icM5iTbfaX/hbTSVhJmeem51l/A8LYY2J21uU59k/eXLEwCAR1Fm"], ["email", "ashlee@whitefranecki.io"], ["full_name", "Hank MacGyver DDS"], ["created_at", "2016-02-15 23:37:20.528400"], ["updated_at", "2016-02-15 23:37:20.528400"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"full_name"=>"Hank MacGyver DDS", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."full_name" = $1 LIMIT 1  [["full_name", "Hank MacGyver DDS"]]
+Redirected to http://test.host/home
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ignacio@schulist.net' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ignacio@schulist.net' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$252qx6do/5bkOfrlxiCksu9cLQeBkH53XmpGtDPS2VzYhpcvbrCmq"], ["email", "ignacio@schulist.net"], ["full_name", "Yvette White"], ["created_at", "2016-02-15 23:37:20.540912"], ["updated_at", "2016-02-15 23:37:20.540912"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"full_name"=>"Yvette White", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."full_name" = $1 LIMIT 1  [["full_name", "Yvette White"]]
+Redirected to http://test.host/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'adriel_zemlak@labadie.biz' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'adriel_zemlak@labadie.biz' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$PXsIgH1hyFrKbMw5ED.aZe8eRulyS2/P9chnFiBC9Wdb2WIE5j71C"], ["email", "adriel_zemlak@labadie.biz"], ["full_name", "Scot Legros"], ["created_at", "2016-02-15 23:37:20.551999"], ["updated_at", "2016-02-15 23:37:20.551999"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"full_name"=>"Scot Legros", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."full_name" = $1 LIMIT 1  [["full_name", "Scot Legros"]]
+Redirected to http://test.host/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'sabina.borer@konopelskihartmann.name' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'sabina.borer@konopelskihartmann.name' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$U2Hrr/muYFFJNQ8uswYns.W6QDNJBd7xL.YOAlXHd4p/4h1i2SXJi"], ["email", "sabina.borer@konopelskihartmann.name"], ["full_name", "Raul Lynch"], ["created_at", "2016-02-15 23:37:20.565847"], ["updated_at", "2016-02-15 23:37:20.565847"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"full_name"=>"Raul Lynch", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."full_name" = $1 LIMIT 1  [["full_name", "Raul Lynch"]]
+Redirected to http://test.host/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'sven.pouros@casper.io' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'sven.pouros@casper.io' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$0krox4YrCjfIqM6dehwqOuEWPrXRegerd/JntHpeVKy6HLCck8Uyu"], ["email", "sven.pouros@casper.io"], ["full_name", "Felix Corkery"], ["created_at", "2016-02-15 23:37:20.581425"], ["updated_at", "2016-02-15 23:37:20.581425"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"tevin@runte.io", "full_name"=>"Adrien O'Conner MD"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'tevin@runte.io' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["full_name", "Adrien O'Conner MD"], ["email", "tevin@runte.io"], ["password_digest", "$2a$04$uN3p7OY2UfRttyAwgQHgrul.RzOiHqHXd8eqT01zC/eO5ImfdlPAG"], ["created_at", "2016-02-15 23:37:20.602342"], ["updated_at", "2016-02-15 23:37:20.602342"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/sign_in
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"caesar.shields@bins.com", "full_name"=>"Britney Kozey"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'caesar.shields@bins.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "Britney Kozey"], ["email", "caesar.shields@bins.com"], ["password_digest", "$2a$04$iPBC1KIKJEMXAzccmsewoe8iIwz0XgLmR/XP6eRoPXClf9i6aKk5O"], ["created_at", "2016-02-15 23:37:20.612819"], ["updated_at", "2016-02-15 23:37:20.612819"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sign_in
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"estefania_turcotte@moencain.net", "full_name"=>"Marcelina Hayes"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'estefania_turcotte@moencain.net' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "Marcelina Hayes"], ["email", "estefania_turcotte@moencain.net"], ["password_digest", "$2a$04$van82RhrEZoFSdwlFv2YseyYF8eRVeRBmCYyzFPoQiEQTN4VzW6wK"], ["created_at", "2016-02-15 23:37:20.621683"], ["updated_at", "2016-02-15 23:37:20.621683"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sign_in
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"full_name"=>"Daniel Shonfeld"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered users/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"full_name"=>"Daniel Shonfeld"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered users/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"full_name"=>"Daniel Shonfeld"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered users/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"full_name"=>"Daniel Shonfeld"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered users/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Human Brand Executive' LIMIT 1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'hUMAN bRAND eXECUTIVE' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["password_digest", "$2a$04$EdQ01LA2KmfLBk3KMtfMYOL2RxSIqUlG8Nwqge/iMV2iWt0.dy2IO"], ["created_at", "2016-02-15 23:37:20.704812"], ["updated_at", "2016-02-15 23:37:20.704812"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["email", "an arbitrary value"], ["updated_at", "2016-02-15 23:37:20.707518"], ["id", 159]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'an arbitrary value' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Load (0.5ms)[0m  SELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Human Brand Executive' LIMIT 1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'hUMAN bRAND eXECUTIVE' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("password_digest", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["password_digest", "$2a$04$ga6q.cmfZQ9LoSi49yV8hedwa7dlcw3qiG12TLTZ/XeJi3hkZnsTG"], ["created_at", "2016-02-15 23:39:02.487995"], ["updated_at", "2016-02-15 23:39:02.487995"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "an arbitrary value"], ["updated_at", "2016-02-15 23:39:02.490530"], ["id", 160]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m

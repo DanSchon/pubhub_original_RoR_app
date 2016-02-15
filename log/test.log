@@ -3368,3 +3368,1195 @@ Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms)
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (53.9ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Legacy Infrastructure Executive' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Legacy Infrastructure Executive' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Legacy Infrastructure Executive"], ["url", "http://koch.co/frederick_wilkinson"], ["content", "Eos debitis ipsum porro et ipsa sint. Numquam dolore omnis nulla dolor eligendi. Perferendis aliquid qui. Quam qui aut explicabo non. Vel dicta ratione quae accusamus qui sint est."], ["created_at", "2016-02-15 19:48:28.801227"], ["updated_at", "2016-02-15 19:48:28.801227"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Investor Identity Representative' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Investor Identity Representative' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Investor Identity Representative"], ["url", "http://jakubowski.co/lisandro"], ["content", "Et ducimus maiores adipisci dolores. Laborum laboriosam blanditiis. Dolorum occaecati pariatur sapiente cum molestiae reiciendis repudiandae. Aut consequuntur molestiae eaque assumenda laudantium ea tenetur."], ["created_at", "2016-02-15 19:48:28.806605"], ["updated_at", "2016-02-15 19:48:28.806605"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 52ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.4ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'National Accountability Planner' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'National Accountability Planner' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "National Accountability Planner"], ["url", "http://macgyverleffler.biz/jovan"], ["content", "Blanditiis molestiae eaque voluptatibus magnam aliquid et. Veritatis sit voluptatibus nihil adipisci ex inventore. Ratione saepe molestiae consequatur rerum soluta."], ["created_at", "2016-02-15 19:48:57.666048"], ["updated_at", "2016-02-15 19:48:57.666048"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Corporate Solutions Technician' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Corporate Solutions Technician' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Corporate Solutions Technician"], ["url", "http://hermann.co/cristopher"], ["content", "Natus error quas quia id maxime excepturi occaecati. Aut dicta autem sed harum qui. Quasi aperiam quia in ducimus ex mollitia vitae."], ["created_at", "2016-02-15 19:48:57.671388"], ["updated_at", "2016-02-15 19:48:57.671388"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Central Integration Orchestrator' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Central Integration Orchestrator' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Central Integration Orchestrator"], ["url", "http://wunschmosciski.biz/clotilde"], ["content", "Debitis molestiae delectus. Molestiae omnis maiores amet quia nemo odio praesentium. Porro voluptas ut voluptas quia."], ["created_at", "2016-02-15 20:12:31.616935"], ["updated_at", "2016-02-15 20:12:31.616935"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Direct Functionality Representative' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Direct Functionality Representative' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Direct Functionality Representative"], ["url", "http://bode.name/gerardo"], ["content", "Consectetur soluta voluptatibus vero velit odio assumenda non. Corrupti aliquid commodi architecto repellendus assumenda. Qui eum quo voluptatibus magnam quo. Similique ab esse adipisci. Quasi tenetur inventore dolores optio earum."], ["created_at", "2016-02-15 20:12:31.621807"], ["updated_at", "2016-02-15 20:12:31.621807"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Legacy Implementation Agent", "url"=>"http://dare.org/vida_stroman", "content"=>"Quo sed vero maxime et maiores. Recusandae nobis minus. Ut voluptatem qui molestias ad ut. A recusandae eos amet laboriosam beatae."}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Central Response Developer' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Central Response Developer' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Central Response Developer"], ["url", "http://schmitt.net/haylee"], ["content", "Sed voluptatem optio dolores quos et. Aut facere ut aperiam autem sint. Nihil in quod maiores excepturi."], ["created_at", "2016-02-15 20:13:41.078295"], ["updated_at", "2016-02-15 20:13:41.078295"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Branding Analyst' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Branding Analyst' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Dynamic Branding Analyst"], ["url", "http://ondricka.io/casimir.toy"], ["content", "Fugit sint iste est sed reiciendis. Eum labore voluptate ut fugiat nisi id tempora. Eos fugiat assumenda voluptatem cupiditate. Vel aliquid quia et id modi aut rerum. Eligendi aut at enim in ut."], ["created_at", "2016-02-15 20:13:41.083547"], ["updated_at", "2016-02-15 20:13:41.083547"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Product Metrics Administrator", "url"=>"http://bayerbailey.co/jaiden_schaefer", "content"=>"Dolores illo distinctio. Id et ut sint. Totam et id. Hic nam nisi vitae sapiente aperiam ut veniam."}}
+Redirected to http://test.host/home
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'District Interactions Consultant' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'District Interactions Consultant' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "District Interactions Consultant"], ["url", "http://beier.info/marjolaine"], ["content", "Officiis blanditiis dolorem aut minus eligendi voluptas. Sint fugit voluptas porro. Quaerat officiis sed beatae perferendis eos aperiam sunt."], ["created_at", "2016-02-15 20:15:14.797724"], ["updated_at", "2016-02-15 20:15:14.797724"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Customer Group Orchestrator' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Customer Group Orchestrator' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Customer Group Orchestrator"], ["url", "http://cartwright.net/marcelino"], ["content", "Id soluta et natus nemo sit atque earum. Eos unde nisi facere non. Hic cumque voluptatem similique nesciunt sed eveniet. Sapiente aut quos."], ["created_at", "2016-02-15 20:15:14.802082"], ["updated_at", "2016-02-15 20:15:14.802082"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Human Division Officer", "url"=>"http://barrows.name/wanda_mueller", "content"=>"Est odio quibusdam ut aut accusantium odit vitae. Itaque aspernatur ea sed fuga qui. Quis aliquid consequatur adipisci occaecati odio esse. Dolorum porro recusandae quis. Provident est error omnis ut consequatur odit cumque."}}
+Redirected to http://test.host/home
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"rashad_stanton@ondrickahermiston.org", "full_name"=>"Henri Douglas"}}
+Redirected to http://test.host/home
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Product Assurance Supervisor' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Product Assurance Supervisor' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Product Assurance Supervisor"], ["url", "http://zboncak.name/pete"], ["content", "Doloribus molestiae expedita at ipsa possimus ratione iure. Quae asperiores doloribus quod aut aut quaerat. Quidem aut voluptatem numquam magni omnis facilis recusandae. Aut officiis rerum."], ["created_at", "2016-02-15 20:17:00.811919"], ["updated_at", "2016-02-15 20:17:00.811919"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Customer Brand Technician' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Customer Brand Technician' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Customer Brand Technician"], ["url", "http://bartoncrooks.info/hailee_anderson"], ["content", "Delectus iste earum. Atque exercitationem qui. Est exercitationem perferendis eum. Fugit est ipsam. Nihil repudiandae sint doloribus ut placeat excepturi quidem."], ["created_at", "2016-02-15 20:17:00.816902"], ["updated_at", "2016-02-15 20:17:00.816902"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Principal Assurance Engineer", "url"=>"http://lueilwitz.io/robb_bradtke", "content"=>"Voluptatem dolor vitae repellat porro sunt. Labore praesentium eos qui nulla. Ducimus omnis omnis veniam ex maiores adipisci voluptas. Soluta numquam omnis eos."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Principal Assurance Engineer' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Principal Assurance Engineer"], ["url", "http://lueilwitz.io/robb_bradtke"], ["content", "Voluptatem dolor vitae repellat porro sunt. Labore praesentium eos qui nulla. Ducimus omnis omnis veniam ex maiores adipisci voluptas. Soluta numquam omnis eos."], ["created_at", "2016-02-15 20:17:00.880112"], ["updated_at", "2016-02-15 20:17:00.880112"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"tracy.douglas@raynortromp.net", "full_name"=>"Adeline Waelchi V"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Forward Branding Administrator' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Forward Branding Administrator' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Forward Branding Administrator"], ["url", "http://koelpin.co/douglas.hintz"], ["content", "At incidunt asperiores earum. Omnis reprehenderit omnis et est officia. Distinctio quis impedit sit praesentium ad voluptatem."], ["created_at", "2016-02-15 20:18:16.593840"], ["updated_at", "2016-02-15 20:18:16.593840"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'International Accounts Designer' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'International Accounts Designer' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "International Accounts Designer"], ["url", "http://stehr.name/adam"], ["content", "Unde facilis voluptas ratione. Cupiditate iure quo corrupti. Omnis soluta vitae excepturi consectetur labore eos."], ["created_at", "2016-02-15 20:18:16.598166"], ["updated_at", "2016-02-15 20:18:16.598166"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.4ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Corporate Communications Engineer", "url"=>"http://reynolds.net/ahmed", "content"=>"Veniam ut quos. Sint aut voluptate rem ab consectetur. Quisquam et ut ut nihil. Ut est et."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Corporate Communications Engineer' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Corporate Communications Engineer"], ["url", "http://reynolds.net/ahmed"], ["content", "Veniam ut quos. Sint aut voluptate rem ab consectetur. Quisquam et ut ut nihil. Ut est et."], ["created_at", "2016-02-15 20:18:16.665044"], ["updated_at", "2016-02-15 20:18:16.665044"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"jermey.hintz@ullrich.info", "full_name"=>"Jennifer Schuppe II"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Product Optimization Director' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Product Optimization Director' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Product Optimization Director"], ["url", "http://krajcik.io/joelle"], ["content", "Illo in vitae explicabo et qui laboriosam velit. Culpa beatae velit ipsa velit. Nulla iusto soluta ducimus nobis iste. Perferendis quidem eaque aliquam. Commodi quae et repudiandae omnis."], ["created_at", "2016-02-15 20:18:30.661993"], ["updated_at", "2016-02-15 20:18:30.661993"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Customer Branding Executive' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Customer Branding Executive' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Customer Branding Executive"], ["url", "http://schmeler.org/cedrick.pfannerstill"], ["content", "Voluptas omnis incidunt aut. Reiciendis tempora tempore qui non voluptatum corrupti in. Eius a alias placeat molestiae. Ea omnis tempore neque reiciendis cupiditate omnis illo."], ["created_at", "2016-02-15 20:18:30.667417"], ["updated_at", "2016-02-15 20:18:30.667417"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Corporate Metrics Analyst", "url"=>"http://frami.org/carolyne_littel", "content"=>"Sed temporibus culpa occaecati harum nesciunt et quod. Aut enim eos qui. Est sint neque aut."}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"carroll.kulas@goodwinokon.org", "full_name"=>"Ashton Walter"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Human Mobility Technician' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Human Mobility Technician' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Human Mobility Technician"], ["url", "http://reichertstehr.biz/maggie"], ["content", "Dolores sed aut adipisci accusamus eos sint voluptatem. Saepe deleniti esse voluptas perspiciatis et ipsa. Ut et porro. Dolorem omnis ut alias."], ["created_at", "2016-02-15 20:19:08.488869"], ["updated_at", "2016-02-15 20:19:08.488869"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Senior Assurance Consultant' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Senior Assurance Consultant' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Senior Assurance Consultant"], ["url", "http://mckenzie.net/madaline.nitzsche"], ["content", "Qui suscipit est fugiat qui. Porro quis cumque et. Expedita dicta accusamus quis omnis."], ["created_at", "2016-02-15 20:19:08.493947"], ["updated_at", "2016-02-15 20:19:08.493947"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Regional Solutions Supervisor", "url"=>"http://vandervort.name/daphnee.mertz", "content"=>"Necessitatibus tempore porro repellat minima commodi. Blanditiis fuga error. Illo aut iste doloribus nemo commodi exercitationem."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Regional Solutions Supervisor' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Regional Solutions Supervisor"], ["url", "http://vandervort.name/daphnee.mertz"], ["content", "Necessitatibus tempore porro repellat minima commodi. Blanditiis fuga error. Illo aut iste doloribus nemo commodi exercitationem."], ["created_at", "2016-02-15 20:19:08.556984"], ["updated_at", "2016-02-15 20:19:08.556984"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"rhoda@nitzsche.name", "full_name"=>"Devin Boyle"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Tactics Administrator' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Tactics Administrator' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Dynamic Tactics Administrator"], ["url", "http://flatley.io/merle_hintz"], ["content", "Nobis facilis quas nam libero quis culpa. Et et et recusandae laborum voluptatem deleniti quis. Maxime provident reprehenderit voluptas omnis. Et perspiciatis at similique voluptatem earum. Provident est quia illum praesentium dolor."], ["created_at", "2016-02-15 20:20:45.440604"], ["updated_at", "2016-02-15 20:20:45.440604"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Principal Communications Administrator' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Principal Communications Administrator' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Principal Communications Administrator"], ["url", "http://daniel.net/diana_douglas"], ["content", "Possimus qui tenetur et quam. Illo esse laboriosam sequi reiciendis occaecati quas unde. Architecto dicta esse natus voluptas unde ea tempora. Qui est eius qui dolorem consequatur."], ["created_at", "2016-02-15 20:20:45.445686"], ["updated_at", "2016-02-15 20:20:45.445686"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Legacy Division Planner", "url"=>"http://schinnergibson.biz/bernadine", "content"=>"Porro est ad doloribus. Dolores et voluptatem quae et. Unde sequi ut. Nulla voluptatibus ad culpa omnis magni itaque vero."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Legacy Division Planner' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Legacy Division Planner"], ["url", "http://schinnergibson.biz/bernadine"], ["content", "Porro est ad doloribus. Dolores et voluptatem quae et. Unde sequi ut. Nulla voluptatibus ad culpa omnis magni itaque vero."], ["created_at", "2016-02-15 20:20:45.507602"], ["updated_at", "2016-02-15 20:20:45.507602"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"adam.oberbrunner@legros.io", "full_name"=>"Randi Medhurst"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Investor Research Developer' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Investor Research Developer' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Investor Research Developer"], ["url", "http://bartellschmeler.name/nona.keeling"], ["content", "Mollitia in ea eum labore occaecati. Minus ea et ratione. Ad ut possimus exercitationem. Et et repellat quod."], ["created_at", "2016-02-15 20:21:21.440887"], ["updated_at", "2016-02-15 20:21:21.440887"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Human Tactics Developer' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Human Tactics Developer' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Human Tactics Developer"], ["url", "http://johns.net/dariana"], ["content", "Aliquam harum iste natus. Id culpa deleniti molestiae a. Eligendi debitis aut labore commodi et. Voluptates sunt necessitatibus alias molestiae laboriosam consequatur sed. Possimus quo voluptate voluptates molestiae vitae quis deleniti."], ["created_at", "2016-02-15 20:21:21.445976"], ["updated_at", "2016-02-15 20:21:21.445976"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"National Creative Orchestrator", "url"=>"http://oconnellbreitenberg.net/bridgette_graham", "content"=>"Optio quia illo. Quasi fuga deleniti qui aut amet. Laboriosam sit quas."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'National Creative Orchestrator' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "National Creative Orchestrator"], ["url", "http://oconnellbreitenberg.net/bridgette_graham"], ["content", "Optio quia illo. Quasi fuga deleniti qui aut amet. Laboriosam sit quas."], ["created_at", "2016-02-15 20:21:21.509179"], ["updated_at", "2016-02-15 20:21:21.509179"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"ceasar_vonrueden@fritsch.org", "full_name"=>"Madisyn Bode Sr."}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mPub Exists (1.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'District Marketing Strategist' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'District Marketing Strategist' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "District Marketing Strategist"], ["url", "http://mayert.com/ashton.west"], ["content", "Earum quia et eius aut. Alias dicta adipisci nihil aut maxime nihil. Voluptates quam cum magni enim facilis eos."], ["created_at", "2016-02-15 20:23:33.969710"], ["updated_at", "2016-02-15 20:23:33.969710"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.5ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Direct Metrics Representative' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.4ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Direct Metrics Representative' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Direct Metrics Representative"], ["url", "http://medhurst.name/zion_metz"], ["content", "Quaerat dolorem nostrum ipsa magnam magni. Minima aspernatur aperiam et eaque. Distinctio est atque voluptas harum et. Iste praesentium sunt sint quo porro."], ["created_at", "2016-02-15 20:23:33.979379"], ["updated_at", "2016-02-15 20:23:33.979379"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.6ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"International Brand Producer", "url"=>"http://feil.biz/wyman", "content"=>"Quos debitis quae quo sed explicabo rerum. Atque fugit dolor optio est sunt quo. Ratione officia ut dolore voluptatem. Qui impedit architecto culpa praesentium. Alias officia aut."}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'International Brand Producer' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "International Brand Producer"], ["url", "http://feil.biz/wyman"], ["content", "Quos debitis quae quo sed explicabo rerum. Atque fugit dolor optio est sunt quo. Ratione officia ut dolore voluptatem. Qui impedit architecto culpa praesentium. Alias officia aut."], ["created_at", "2016-02-15 20:23:34.104999"], ["updated_at", "2016-02-15 20:23:34.104999"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Regional Intranet Producer", "url"=>"http://muellermoriette.co/gust", "content"=>"Repellat sed ullam in sit beatae. Maxime ea tenetur ratione praesentium amet exercitationem. Nihil est aut voluptates eum voluptate. Necessitatibus autem sint id expedita doloremque."}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Regional Intranet Producer' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Regional Intranet Producer"], ["url", "http://muellermoriette.co/gust"], ["content", "Repellat sed ullam in sit beatae. Maxime ea tenetur ratione praesentium amet exercitationem. Nihil est aut voluptates eum voluptate. Necessitatibus autem sint id expedita doloremque."], ["created_at", "2016-02-15 20:23:34.122484"], ["updated_at", "2016-02-15 20:23:34.122484"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 9ms (ActiveRecord: 2.0ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'National Paradigm Planner' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'National Paradigm Planner' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "National Paradigm Planner"], ["url", "http://riceyost.info/brook"], ["content", "Nesciunt nobis dicta quaerat adipisci vitae at et. Consequatur enim accusamus totam et. Voluptas veritatis voluptatem. Odio reprehenderit ea. Ipsa deleniti corrupti rerum eos consequatur."], ["created_at", "2016-02-15 20:27:00.250657"], ["updated_at", "2016-02-15 20:27:00.250657"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Future Marketing Officer' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Future Marketing Officer' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Future Marketing Officer"], ["url", "http://murazik.io/heloise"], ["content", "Qui dolores mollitia. Cupiditate earum et nam possimus. Voluptatem totam aut animi voluptatem illum assumenda. Quibusdam similique rem. Dolorum nulla et."], ["created_at", "2016-02-15 20:27:00.255612"], ["updated_at", "2016-02-15 20:27:00.255612"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 75ms (Views: 74.0ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.4ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Regional Creative Facilitator", "url"=>"http://johnson.com/adrian", "content"=>"Quo tempore laboriosam. Commodi cum non. Ab velit et corrupti nesciunt vero quasi rem."}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Regional Creative Facilitator' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Regional Creative Facilitator"], ["url", "http://johnson.com/adrian"], ["content", "Quo tempore laboriosam. Commodi cum non. Ab velit et corrupti nesciunt vero quasi rem."], ["created_at", "2016-02-15 20:27:00.438694"], ["updated_at", "2016-02-15 20:27:00.438694"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Human Functionality Strategist", "url"=>"http://nitzsche.net/reid_cartwright", "content"=>"Omnis est qui fuga qui. Hic quos ea rerum eum rerum voluptatibus. Ratione deserunt fugit non ut veritatis tenetur aliquam."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Human Functionality Strategist' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Human Functionality Strategist"], ["url", "http://nitzsche.net/reid_cartwright"], ["content", "Omnis est qui fuga qui. Hic quos ea rerum eum rerum voluptatibus. Ratione deserunt fugit non ut veritatis tenetur aliquam."], ["created_at", "2016-02-15 20:27:00.447044"], ["updated_at", "2016-02-15 20:27:00.447044"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Product Quality Director' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Product Quality Director' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Product Quality Director"], ["url", "http://borerrodriguez.co/brandyn"], ["content", "Eum eum sunt totam ut. Ut dolorum quasi eum in et expedita. Sit nihil eos eligendi in. Consectetur qui suscipit et tenetur est cum distinctio."], ["created_at", "2016-02-15 20:29:01.613339"], ["updated_at", "2016-02-15 20:29:01.613339"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Legacy Quality Producer' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Legacy Quality Producer' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Legacy Quality Producer"], ["url", "http://bogisich.name/elia_donnelly"], ["content", "Nulla deleniti consequatur consequuntur. Animi enim rerum. Earum ad impedit voluptatem."], ["created_at", "2016-02-15 20:29:01.618476"], ["updated_at", "2016-02-15 20:29:01.618476"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 52ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.4ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Direct Mobility Producer", "url"=>"http://legros.net/darion", "content"=>"Possimus consequatur excepturi debitis quia. Voluptatem ut necessitatibus. Aut quia officiis distinctio tempore qui. Totam et quam debitis sed doloribus distinctio mollitia."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Direct Mobility Producer' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Direct Mobility Producer"], ["url", "http://legros.net/darion"], ["content", "Possimus consequatur excepturi debitis quia. Voluptatem ut necessitatibus. Aut quia officiis distinctio tempore qui. Totam et quam debitis sed doloribus distinctio mollitia."], ["created_at", "2016-02-15 20:29:01.777264"], ["updated_at", "2016-02-15 20:29:01.777264"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Dynamic Metrics Consultant", "url"=>"http://eichmannbode.biz/gina.fay", "content"=>"Voluptas debitis eos quo. Occaecati eligendi voluptate ab eos distinctio impedit. Omnis aut odit iste quis. Illo eaque qui sit atque."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Metrics Consultant' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Dynamic Metrics Consultant"], ["url", "http://eichmannbode.biz/gina.fay"], ["content", "Voluptas debitis eos quo. Occaecati eligendi voluptate ab eos distinctio impedit. Omnis aut odit iste quis. Illo eaque qui sit atque."], ["created_at", "2016-02-15 20:29:01.787721"], ["updated_at", "2016-02-15 20:29:01.787721"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"hello"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'hello' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Legacy Interactions Architect' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Legacy Interactions Architect' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Legacy Interactions Architect"], ["url", "http://buckridgehaley.biz/minerva"], ["content", "Voluptates dolorum dolores soluta excepturi officiis harum. Aliquam nesciunt consectetur omnis. Enim consequatur quo. Similique doloribus occaecati assumenda laudantium aut qui. Sapiente itaque excepturi quis ipsa esse libero porro."], ["created_at", "2016-02-15 20:30:26.622386"], ["updated_at", "2016-02-15 20:30:26.622386"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Corporate Mobility Architect' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Corporate Mobility Architect' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Corporate Mobility Architect"], ["url", "http://metz.biz/amir_schuster"], ["content", "Provident est et rerum perspiciatis debitis autem. Nihil ipsum perferendis rerum excepturi consequatur. Tempora molestiae incidunt voluptates. Tempore doloribus tenetur et eum qui. Ex minus aliquam optio sint ut."], ["created_at", "2016-02-15 20:30:26.627568"], ["updated_at", "2016-02-15 20:30:26.627568"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Dynamic Configuration Planner", "url"=>"http://daniel.net/laury", "content"=>"Deleniti ut sed nihil libero sit aliquam ut. Aut ut quae. Laborum molestiae culpa ut mollitia molestias. Adipisci quos velit ipsa. Sunt deserunt deleniti et."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Configuration Planner' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Dynamic Configuration Planner"], ["url", "http://daniel.net/laury"], ["content", "Deleniti ut sed nihil libero sit aliquam ut. Aut ut quae. Laborum molestiae culpa ut mollitia molestias. Adipisci quos velit ipsa. Sunt deserunt deleniti et."], ["created_at", "2016-02-15 20:30:26.689327"], ["updated_at", "2016-02-15 20:30:26.689327"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Dynamic Usability Supervisor", "url"=>"http://carroll.name/adelle.macgyver", "content"=>"Omnis recusandae ea. Occaecati porro deleniti debitis possimus ipsa sit. Rerum non sed minus."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Usability Supervisor' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Dynamic Usability Supervisor"], ["url", "http://carroll.name/adelle.macgyver"], ["content", "Omnis recusandae ea. Occaecati porro deleniti debitis possimus ipsa sit. Rerum non sed minus."], ["created_at", "2016-02-15 20:30:26.697631"], ["updated_at", "2016-02-15 20:30:26.697631"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"hello"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'hello' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Internal Communications Planner' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Internal Communications Planner' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Internal Communications Planner"], ["url", "http://skiles.net/darlene"], ["content", "Culpa aperiam adipisci quisquam enim ullam. Et ratione qui distinctio est nostrum. Sit dolorem quia est esse nulla id. Et distinctio fugiat aspernatur sit. Minima earum a laboriosam."], ["created_at", "2016-02-15 20:33:23.862830"], ["updated_at", "2016-02-15 20:33:23.862830"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Internal Web Strategist' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Internal Web Strategist' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Internal Web Strategist"], ["url", "http://stoltenbergkris.io/judy_rowe"], ["content", "Magnam dolorum nihil. Est similique et dolor provident. Atque provident nihil. Eveniet et quia vel qui dolor delectus similique. Quae cupiditate et doloribus nesciunt occaecati ab."], ["created_at", "2016-02-15 20:33:23.868100"], ["updated_at", "2016-02-15 20:33:23.868100"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Customer Data Producer", "url"=>"http://morar.biz/georgianna", "content"=>"Ut excepturi sit occaecati omnis consequatur. Nihil qui totam doloribus architecto sunt quo et. Asperiores veritatis cupiditate hic. Repudiandae aut fuga architecto qui modi voluptatibus autem."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Customer Data Producer' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Customer Data Producer"], ["url", "http://morar.biz/georgianna"], ["content", "Ut excepturi sit occaecati omnis consequatur. Nihil qui totam doloribus architecto sunt quo et. Asperiores veritatis cupiditate hic. Repudiandae aut fuga architecto qui modi voluptatibus autem."], ["created_at", "2016-02-15 20:33:23.940847"], ["updated_at", "2016-02-15 20:33:23.940847"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"International Paradigm Engineer", "url"=>"http://bashiriansmith.info/waylon", "content"=>"Ex at veniam aperiam tenetur nostrum doloribus vero. Non officiis nesciunt et maiores iste. Inventore numquam minima magni ex unde qui reiciendis. Nostrum voluptatum consequatur est illo."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'International Paradigm Engineer' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "International Paradigm Engineer"], ["url", "http://bashiriansmith.info/waylon"], ["content", "Ex at veniam aperiam tenetur nostrum doloribus vero. Non officiis nesciunt et maiores iste. Inventore numquam minima magni ex unde qui reiciendis. Nostrum voluptatum consequatur est illo."], ["created_at", "2016-02-15 20:33:23.949533"], ["updated_at", "2016-02-15 20:33:23.949533"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"hello"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'hello' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Legacy Brand Technician' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Legacy Brand Technician' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Legacy Brand Technician"], ["url", "http://cummeratamann.org/florian.erdman"], ["content", "Asperiores et sint porro explicabo quo. Vel totam ut quasi nesciunt. Voluptatem rerum labore totam provident vero veniam temporibus. Commodi omnis id non. Delectus voluptates harum."], ["created_at", "2016-02-15 20:35:46.655418"], ["updated_at", "2016-02-15 20:35:46.655418"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Web Agent' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Web Agent' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Dynamic Web Agent"], ["url", "http://thompson.net/mayra"], ["content", "Accusamus et aut. Enim quasi aut nesciunt itaque. Praesentium ut quia animi debitis officia. Quod debitis velit. Omnis ipsum qui."], ["created_at", "2016-02-15 20:35:46.660598"], ["updated_at", "2016-02-15 20:35:46.660598"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Lead Brand Designer", "url"=>"http://jenkinscorkery.name/rhett", "content"=>"In recusandae necessitatibus mollitia libero laborum. Itaque consequatur rerum et eligendi. Consequatur eum est et est corporis voluptatem non. Cupiditate autem ea est dolore. Accusantium inventore beatae suscipit ut molestiae voluptatum magni."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Lead Brand Designer' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Lead Brand Designer"], ["url", "http://jenkinscorkery.name/rhett"], ["content", "In recusandae necessitatibus mollitia libero laborum. Itaque consequatur rerum et eligendi. Consequatur eum est et est corporis voluptatem non. Cupiditate autem ea est dolore. Accusantium inventore beatae suscipit ut molestiae voluptatum magni."], ["created_at", "2016-02-15 20:35:46.723659"], ["updated_at", "2016-02-15 20:35:46.723659"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Investor Response Facilitator", "url"=>"http://rodriguez.biz/jermey_dare", "content"=>"Reprehenderit mollitia facere. Ullam vitae distinctio culpa a quibusdam. Nisi culpa iure qui voluptas maiores perspiciatis. Velit nam aspernatur temporibus aliquam."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Investor Response Facilitator' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Investor Response Facilitator"], ["url", "http://rodriguez.biz/jermey_dare"], ["content", "Reprehenderit mollitia facere. Ullam vitae distinctio culpa a quibusdam. Nisi culpa iure qui voluptas maiores perspiciatis. Velit nam aspernatur temporibus aliquam."], ["created_at", "2016-02-15 20:35:46.731969"], ["updated_at", "2016-02-15 20:35:46.731969"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 61ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'National Metrics Director' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'National Metrics Director' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "National Metrics Director"], ["url", "http://corwin.io/camren_lebsack"], ["content", "Dolorum consequatur est suscipit sunt. Exercitationem hic maxime labore tempore error eaque. Perferendis quasi consequatur inventore. Sint est repellat."], ["created_at", "2016-02-15 20:39:37.533129"], ["updated_at", "2016-02-15 20:39:37.533129"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Corporate Solutions Architect' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Corporate Solutions Architect' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Corporate Solutions Architect"], ["url", "http://zboncak.biz/lillie"], ["content", "Inventore enim ad velit impedit consequatur sunt voluptatem. Voluptatum est sit vero et libero dignissimos. Omnis rerum cumque et sit."], ["created_at", "2016-02-15 20:39:37.537801"], ["updated_at", "2016-02-15 20:39:37.537801"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Product Brand Officer", "url"=>"http://jakubowski.io/emily.cartwright", "content"=>"Harum earum suscipit asperiores natus. Odit quis minus ad commodi suscipit mollitia architecto. Eius vero excepturi impedit quibusdam aut enim. Similique quia architecto perspiciatis."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Product Brand Officer' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Product Brand Officer"], ["url", "http://jakubowski.io/emily.cartwright"], ["content", "Harum earum suscipit asperiores natus. Odit quis minus ad commodi suscipit mollitia architecto. Eius vero excepturi impedit quibusdam aut enim. Similique quia architecto perspiciatis."], ["created_at", "2016-02-15 20:39:37.602171"], ["updated_at", "2016-02-15 20:39:37.602171"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"District Assurance Executive", "url"=>"http://hoppe.net/ivah_upton", "content"=>"Consequatur et odit aperiam commodi. Eveniet corporis veniam. Eaque et eum est alias laboriosam qui. Rerum magnam est vitae. Est quae et."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'District Assurance Executive' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "District Assurance Executive"], ["url", "http://hoppe.net/ivah_upton"], ["content", "Consequatur et odit aperiam commodi. Eveniet corporis veniam. Eaque et eum est alias laboriosam qui. Rerum magnam est vitae. Est quae et."], ["created_at", "2016-02-15 20:39:37.611120"], ["updated_at", "2016-02-15 20:39:37.611120"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (59.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Forward Integration Assistant' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Forward Integration Assistant' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Forward Integration Assistant"], ["url", "http://predovicarmstrong.info/erin_hermann"], ["content", "Recusandae minima temporibus cum ut reprehenderit incidunt rem. Iusto exercitationem ut perspiciatis provident. Laboriosam vel est consequatur incidunt. Optio sit qui sit adipisci."], ["created_at", "2016-02-15 20:40:28.789181"], ["updated_at", "2016-02-15 20:40:28.789181"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Product Implementation Orchestrator' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Product Implementation Orchestrator' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Product Implementation Orchestrator"], ["url", "http://herzog.name/irma"], ["content", "Temporibus repellendus occaecati illum quis mollitia facilis consequuntur. Ea labore dolorem est quo voluptatum similique beatae. Asperiores ut quasi incidunt. Ullam inventore sapiente."], ["created_at", "2016-02-15 20:40:28.794017"], ["updated_at", "2016-02-15 20:40:28.794017"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Customer Tactics Developer", "url"=>"http://corwin.net/zachary", "content"=>"Suscipit totam neque et est beatae porro. Voluptas quam a debitis. Est repudiandae et nostrum odit sed et temporibus."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Customer Tactics Developer' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Customer Tactics Developer"], ["url", "http://corwin.net/zachary"], ["content", "Suscipit totam neque et est beatae porro. Voluptas quam a debitis. Est repudiandae et nostrum odit sed et temporibus."], ["created_at", "2016-02-15 20:40:28.821892"], ["updated_at", "2016-02-15 20:40:28.821892"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 41ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Human Applications Officer", "url"=>"http://ruecker.org/carmelo", "content"=>"Quisquam voluptate ex sit odit. Sit modi a. Perferendis qui cupiditate ducimus laborum magni. Ratione beatae inventore quia dolorem aspernatur. Magnam ut est molestiae suscipit possimus."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Human Applications Officer' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Human Applications Officer"], ["url", "http://ruecker.org/carmelo"], ["content", "Quisquam voluptate ex sit odit. Sit modi a. Perferendis qui cupiditate ducimus laborum magni. Ratione beatae inventore quia dolorem aspernatur. Magnam ut est molestiae suscipit possimus."], ["created_at", "2016-02-15 20:40:28.866407"], ["updated_at", "2016-02-15 20:40:28.866407"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Principal Metrics Associate' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Principal Metrics Associate' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Principal Metrics Associate"], ["url", "http://bailey.name/natalie"], ["content", "Ut mollitia laboriosam corrupti. Quia accusantium est atque dolores optio. Ex ut mollitia deleniti dolor. Cum quia quibusdam ab. Numquam voluptas autem laudantium eos esse consectetur perspiciatis."], ["created_at", "2016-02-15 20:40:44.521848"], ["updated_at", "2016-02-15 20:40:44.521848"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Product Infrastructure Consultant' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Product Infrastructure Consultant' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Product Infrastructure Consultant"], ["url", "http://bernhard.com/samantha"], ["content", "Libero reiciendis harum molestiae laboriosam ut occaecati. Fugit et et delectus corrupti amet quo debitis. Aliquam voluptatem quibusdam exercitationem culpa repellendus occaecati cum."], ["created_at", "2016-02-15 20:40:44.526913"], ["updated_at", "2016-02-15 20:40:44.526913"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Future Assurance Facilitator", "url"=>"http://heidenreich.name/woodrow", "content"=>"Sunt iure non veritatis ducimus. Ut repellat facere harum sed dicta minus nam. Quis quas cumque officiis cum iste consequuntur nihil. Deleniti corrupti quos dicta culpa accusantium voluptatem dolore."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Future Assurance Facilitator' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Future Assurance Facilitator"], ["url", "http://heidenreich.name/woodrow"], ["content", "Sunt iure non veritatis ducimus. Ut repellat facere harum sed dicta minus nam. Quis quas cumque officiis cum iste consequuntur nihil. Deleniti corrupti quos dicta culpa accusantium voluptatem dolore."], ["created_at", "2016-02-15 20:40:44.556114"], ["updated_at", "2016-02-15 20:40:44.556114"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 43ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Direct Division Architect", "url"=>"http://fishercruickshank.org/eleanora_feeney", "content"=>"Unde enim rerum molestias assumenda perspiciatis. Dolor vitae sunt commodi quae ut reiciendis. Aut consectetur aut. Voluptatum nisi quae quos cupiditate placeat ullam architecto. Quae quo ut ut nobis ut rerum."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Direct Division Architect' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Direct Division Architect"], ["url", "http://fishercruickshank.org/eleanora_feeney"], ["content", "Unde enim rerum molestias assumenda perspiciatis. Dolor vitae sunt commodi quae ut reiciendis. Aut consectetur aut. Voluptatum nisi quae quos cupiditate placeat ullam architecto. Quae quo ut ut nobis ut rerum."], ["created_at", "2016-02-15 20:40:44.602983"], ["updated_at", "2016-02-15 20:40:44.602983"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mPub Exists (1.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Senior Security Architect' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Senior Security Architect' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Senior Security Architect"], ["url", "http://bednarconroy.com/felipa.champlin"], ["content", "Non vitae repellat cumque est consectetur qui fuga. Quo consequatur perferendis modi velit tempore facere temporibus. Doloribus laboriosam non ipsam neque placeat. Eveniet repudiandae assumenda sint qui."], ["created_at", "2016-02-15 20:48:49.296501"], ["updated_at", "2016-02-15 20:48:49.296501"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.5ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'District Security Agent' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.4ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'District Security Agent' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "District Security Agent"], ["url", "http://kling.io/berneice_gleichner"], ["content", "Inventore enim minima. Aperiam quam libero magnam provident quisquam assumenda. Ut error recusandae porro est voluptatem. Veritatis magni dolore voluptate rerum est. Est ipsa eaque in error quisquam accusantium."], ["created_at", "2016-02-15 20:48:49.305993"], ["updated_at", "2016-02-15 20:48:49.305993"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.6ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Forward Response Representative", "url"=>"http://miller.net/annabell", "content"=>"Odit est optio rerum accusantium saepe beatae illo. Deleniti rerum incidunt cupiditate quae qui. Provident voluptatum adipisci quos."}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Forward Response Representative' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Forward Response Representative"], ["url", "http://miller.net/annabell"], ["content", "Odit est optio rerum accusantium saepe beatae illo. Deleniti rerum incidunt cupiditate quae qui. Provident voluptatum adipisci quos."], ["created_at", "2016-02-15 20:48:49.361956"], ["updated_at", "2016-02-15 20:48:49.361956"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 73ms (ActiveRecord: 1.5ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Internal Communications Orchestrator", "url"=>"http://schmitt.co/modesta", "content"=>"Totam expedita possimus corporis id natus harum. Enim modi voluptatibus pariatur harum eum quo ea. Incidunt saepe odit explicabo vero quas. Natus unde corporis dolore qui commodi non. Itaque omnis ex voluptas temporibus illo ut quod."}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Internal Communications Orchestrator' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Internal Communications Orchestrator"], ["url", "http://schmitt.co/modesta"], ["content", "Totam expedita possimus corporis id natus harum. Enim modi voluptatibus pariatur harum eum quo ea. Incidunt saepe odit explicabo vero quas. Natus unde corporis dolore qui commodi non. Itaque omnis ex voluptas temporibus illo ut quod."], ["created_at", "2016-02-15 20:48:49.444050"], ["updated_at", "2016-02-15 20:48:49.444050"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (5.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'rodolfo_terry@sipes.name' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'rodolfo_terry@sipes.name' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$l3prXhWoB/1.O88/WlISlOOcE2YJ99B4eBhAGyAV1fmu1AGq2Pdei"], ["email", "rodolfo_terry@sipes.name"], ["full_name", "Luna Ruecker DVM"], ["created_at", "2016-02-15 20:48:49.618460"], ["updated_at", "2016-02-15 20:48:49.618460"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Customer Program Agent", "url"=>"http://harber.io/abbie", "content"=>"Vel officiis nam. Rerum laudantium odio. Veritatis eligendi et laudantium tenetur recusandae."}, "user_id"=>"1"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Customer Program Agent' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Customer Program Agent"], ["url", "http://harber.io/abbie"], ["content", "Vel officiis nam. Rerum laudantium odio. Veritatis eligendi et laudantium tenetur recusandae."], ["created_at", "2016-02-15 20:48:49.630301"], ["updated_at", "2016-02-15 20:48:49.630301"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms)
+  [1m[35mPub Load (1.0ms)[0m  SELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.5ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 1.2ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.5ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Paradigm Executive' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Dynamic Paradigm Executive' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Dynamic Paradigm Executive"], ["url", "http://hodkiewicz.biz/lavon.strosin"], ["content", "Beatae qui sint quibusdam. Sint quod eligendi possimus enim sit. Impedit architecto quam quidem esse et velit tenetur."], ["created_at", "2016-02-15 20:51:00.146173"], ["updated_at", "2016-02-15 20:51:00.146173"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Corporate Marketing Supervisor' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Corporate Marketing Supervisor' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Corporate Marketing Supervisor"], ["url", "http://crist.biz/boris"], ["content", "Et nostrum aliquid voluptatum ab. Voluptatibus eaque saepe dolorem vel vel aut a. Ut cumque esse eveniet sit deserunt. Omnis quo et ullam facilis. Magnam nobis fugiat provident perspiciatis."], ["created_at", "2016-02-15 20:51:00.150754"], ["updated_at", "2016-02-15 20:51:00.150754"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Internal Infrastructure Supervisor", "url"=>"http://hickle.com/alexandrea", "content"=>"Minima est ullam voluptas repellat. Quis voluptate sed architecto sit. Consequuntur dolor dolorem nam nisi. Assumenda accusantium sunt eius."}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Internal Infrastructure Supervisor' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Internal Infrastructure Supervisor"], ["url", "http://hickle.com/alexandrea"], ["content", "Minima est ullam voluptas repellat. Quis voluptate sed architecto sit. Consequuntur dolor dolorem nam nisi. Assumenda accusantium sunt eius."], ["created_at", "2016-02-15 20:51:00.283323"], ["updated_at", "2016-02-15 20:51:00.283323"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 109ms (ActiveRecord: 1.1ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"District Solutions Analyst", "url"=>"http://shanahangorczany.biz/yvonne_rolfson", "content"=>"Qui explicabo ab pariatur sunt. Aliquam nisi numquam dolor recusandae nihil corporis. Qui magni quasi."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'District Solutions Analyst' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "District Solutions Analyst"], ["url", "http://shanahangorczany.biz/yvonne_rolfson"], ["content", "Qui explicabo ab pariatur sunt. Aliquam nisi numquam dolor recusandae nihil corporis. Qui magni quasi."], ["created_at", "2016-02-15 20:51:00.293298"], ["updated_at", "2016-02-15 20:51:00.293298"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Corporate Marketing Strategist", "url"=>"http://douglas.info/andre.oberbrunner", "content"=>"Officiis reiciendis aut ex molestias incidunt inventore. Qui voluptatem maiores ab ut explicabo dolores aperiam. Eveniet tempora voluptatem dolorem veritatis ducimus voluptas. Iste occaecati itaque. Unde quasi ut impedit."}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Corporate Marketing Strategist' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Corporate Marketing Strategist"], ["url", "http://douglas.info/andre.oberbrunner"], ["content", "Officiis reiciendis aut ex molestias incidunt inventore. Qui voluptatem maiores ab ut explicabo dolores aperiam. Eveniet tempora voluptatem dolorem veritatis ducimus voluptas. Iste occaecati itaque. Unde quasi ut impedit."], ["created_at", "2016-02-15 20:51:00.302632"], ["updated_at", "2016-02-15 20:51:00.302632"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+  [1m[36mPub Load (0.4ms)[0m  [1mSELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "pubs"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Internal Program Producer' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Internal Program Producer' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Internal Program Producer"], ["url", "http://turnerlemke.org/delilah"], ["content", "Atque voluptas cumque nulla beatae ex officiis. Dignissimos natus quod omnis distinctio a. Omnis praesentium aut neque. Quasi blanditiis commodi architecto."], ["created_at", "2016-02-15 20:53:37.797913"], ["updated_at", "2016-02-15 20:53:37.797913"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'International Optimization Planner' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'International Optimization Planner' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "International Optimization Planner"], ["url", "http://johnsgreenfelder.co/freda.deckow"], ["content", "Earum cum reprehenderit iusto sint numquam assumenda. Ut repudiandae blanditiis rerum aperiam in. Odio sequi eaque ducimus aliquid."], ["created_at", "2016-02-15 20:53:37.803261"], ["updated_at", "2016-02-15 20:53:37.803261"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Senior Metrics Director", "url"=>"http://gerlach.co/claud", "content"=>"Fuga quo esse. Occaecati distinctio expedita magnam. Minima voluptas fugit repudiandae in. Veritatis consequatur eligendi dolores asperiores voluptas qui quae."}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Senior Metrics Director' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Senior Metrics Director"], ["url", "http://gerlach.co/claud"], ["content", "Fuga quo esse. Occaecati distinctio expedita magnam. Minima voluptas fugit repudiandae in. Veritatis consequatur eligendi dolores asperiores voluptas qui quae."], ["created_at", "2016-02-15 20:53:37.932968"], ["updated_at", "2016-02-15 20:53:37.932968"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 105ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Direct Intranet Planner", "url"=>"http://bruen.com/nyasia", "content"=>"Libero perferendis magni rerum illo adipisci. Tempora dolor eveniet dolorum quam. Fugiat placeat laboriosam unde sit ut. Consequatur molestiae sed vel ratione iusto. Suscipit voluptates ab itaque quo eum."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Direct Intranet Planner' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Direct Intranet Planner"], ["url", "http://bruen.com/nyasia"], ["content", "Libero perferendis magni rerum illo adipisci. Tempora dolor eveniet dolorum quam. Fugiat placeat laboriosam unde sit ut. Consequatur molestiae sed vel ratione iusto. Suscipit voluptates ab itaque quo eum."], ["created_at", "2016-02-15 20:53:37.941518"], ["updated_at", "2016-02-15 20:53:37.941518"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Chief Accountability Coordinator", "url"=>"http://corkery.com/lucie_gerhold", "content"=>"Ratione est ad iste sunt dolores qui quos. In non omnis totam. In veritatis perferendis rerum est. Cum odio ipsum occaecati dolor maiores doloremque."}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Chief Accountability Coordinator' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Chief Accountability Coordinator"], ["url", "http://corkery.com/lucie_gerhold"], ["content", "Ratione est ad iste sunt dolores qui quos. In non omnis totam. In veritatis perferendis rerum est. Cum odio ipsum occaecati dolor maiores doloremque."], ["created_at", "2016-02-15 20:53:37.950748"], ["updated_at", "2016-02-15 20:53:37.950748"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[36mPub Load (0.4ms)[0m  [1mSELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "pubs"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Product Intranet Administrator' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Product Intranet Administrator' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Product Intranet Administrator"], ["url", "http://rohan.io/carlo"], ["content", "Laborum possimus ut perferendis. Sunt et reiciendis assumenda fugiat. Dolor error ad cupiditate. Quo voluptates sapiente modi amet non nemo."], ["created_at", "2016-02-15 20:57:50.778010"], ["updated_at", "2016-02-15 20:57:50.778010"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Forward Implementation Director' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Forward Implementation Director' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Forward Implementation Director"], ["url", "http://howe.net/cordelia.sporer"], ["content", "Optio perferendis velit in quo iusto et. Et totam voluptatem voluptatibus veniam mollitia. Est ducimus recusandae debitis possimus fugiat."], ["created_at", "2016-02-15 20:57:50.783366"], ["updated_at", "2016-02-15 20:57:50.783366"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#index as HTML
+  Rendered pubs/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#new as HTML
+  Rendered pubs/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"Customer Research Agent", "url"=>"http://kub.co/cristopher.moen", "content"=>"Autem quia quod ut tempore dolorem eos quos. Quam ut cupiditate culpa et minus. Autem recusandae nisi in in provident. Ut provident eum libero nam."}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'Customer Research Agent' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Customer Research Agent"], ["url", "http://kub.co/cristopher.moen"], ["content", "Autem quia quod ut tempore dolorem eos quos. Quam ut cupiditate culpa et minus. Autem recusandae nisi in in provident. Ut provident eum libero nam."], ["created_at", "2016-02-15 20:57:50.912575"], ["updated_at", "2016-02-15 20:57:50.912575"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 105ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"International Group Strategist", "url"=>"http://roobblick.info/david", "content"=>"Quis corporis at reiciendis et hic. Nihil et nesciunt architecto aut et impedit iure. Qui quia tempora et rerum doloribus."}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'International Group Strategist' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "International Group Strategist"], ["url", "http://roobblick.info/david"], ["content", "Quis corporis at reiciendis et hic. Nihil et nesciunt architecto aut et impedit iure. Qui quia tempora et rerum doloribus."], ["created_at", "2016-02-15 20:57:50.921438"], ["updated_at", "2016-02-15 20:57:50.921438"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/home
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'brenda@hahnbarton.info' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'brenda@hahnbarton.info' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$z.jsasO0DrCzORxIbPvG3e5eYE7GqiAeSVQ.jux4d.1XWb9frjI3O"], ["email", "brenda@hahnbarton.info"], ["full_name", "Pauline McClure MD"], ["created_at", "2016-02-15 20:57:50.937656"], ["updated_at", "2016-02-15 20:57:50.937656"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"International Communications Executive", "url"=>"http://murazik.io/maximus", "content"=>"Suscipit aut quo enim quibusdam id sit ut. Rerum neque minima. Et quia dolor eos laudantium quaerat."}, "user_id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'International Communications Executive' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "International Communications Executive"], ["url", "http://murazik.io/maximus"], ["content", "Suscipit aut quo enim quibusdam id sit ut. Rerum neque minima. Et quia dolor eos laudantium quaerat."], ["user_id", 2], ["created_at", "2016-02-15 20:57:50.968553"], ["updated_at", "2016-02-15 20:57:50.968553"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/home
+Completed 302 Found in 29ms (ActiveRecord: 1.0ms)
+  [1m[36mPub Load (0.5ms)[0m  [1mSELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "pubs"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by PubsController#create as HTML
+  Parameters: {"pub"=>{"title"=>"title"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered pubs/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m

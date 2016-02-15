@@ -8432,3 +8432,1863 @@ Processing by PubsController#index as HTML
   Rendered shared/_navigation.html.erb (3.1ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 128ms (Views: 126.8ms | ActiveRecord: 0.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'astein@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["full_name", "Albert Einstein"], ["email", "astein@gmail.com"], ["password_digest", "$2a$10$6bq8gfMfYiWVI4pOopfizua9mv7qav.1BycKC92aIgIURoPL8AwMy"], ["created_at", "2016-02-15 09:08:38.414159"], ["updated_at", "2016-02-15 09:08:38.414159"]]
+  [1m[36m (15.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'dmoney@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["full_name", "Charles Darwin"], ["email", "dmoney@gmail.com"], ["password_digest", "$2a$10$sqJJ6xxbTcujlQPRPRoTG.6CYhcNAV8gHNOB7ipVe8/l7O.dE77iy"], ["created_at", "2016-02-15 09:08:38.504791"], ["updated_at", "2016-02-15 09:08:38.504791"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'astein@gmail.com' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'dmoney@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The theory of relativity"], ["content", "Lorem ipsum..."], ["url", "www.google.com"], ["user_id", 1], ["created_at", "2016-02-15 09:09:30.386280"], ["updated_at", "2016-02-15 09:09:30.386280"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "The origin of species"], ["content", "Lorem ipsum..."], ["url", "www.yahoo.com"], ["user_id", 2], ["created_at", "2016-02-15 09:09:30.389756"], ["updated_at", "2016-02-15 09:09:30.389756"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:09:47 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.5ms)[0m  SELECT "pubs".* FROM "pubs"
+  Rendered pubs/index.html.erb within layouts/application (28.6ms)
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 3.3ms)
+
+ActionView::Template::Error (undefined method `pub_path' for #<#<Class:0x007fbcb35cb328>:0x007fbcb4f5d0c0>):
+    1: <ul>
+    2:   <% @pubs.each do |pub| %>
+    3:     <li>
+    4:       <%= link_to pub.title, pub %>
+    5:       <p>posted by <%= link_to pub.user.full_name, pub.user %>. <%= link_to "PDF", pub.url %></p>
+    6:     </li>
+    7:   <% end %>
+  app/views/pubs/index.html.erb:4:in `block in _app_views_pubs_index_html_erb___2167297521856595133_70224233543460'
+  app/views/pubs/index.html.erb:2:in `_app_views_pubs_index_html_erb___2167297521856595133_70224233543460'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (576.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (613.2ms)
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:10:43 -0800
+Processing by PubsController#index as HTML
+  [1m[36mPub Load (0.4ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  Rendered pubs/index.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `user' for #<Pub:0x007fbcb7a73188>):
+    2:   <% @pubs.each do |pub| %>
+    3:     <li>
+    4:       <%= link_to pub.title, "pub" %>
+    5:       <p>posted by <%= link_to pub.user.full_name, "pub.user" %>. <%= link_to "PDF", "pub.url" %></p>
+    6:     </li>
+    7:   <% end %>
+    8: </ul>
+  app/views/pubs/index.html.erb:5:in `block in _app_views_pubs_index_html_erb___2167297521856595133_70224255832400'
+  app/views/pubs/index.html.erb:2:in `_app_views_pubs_index_html_erb___2167297521856595133_70224255832400'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (38.0ms)
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:19:34 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.5ms)[0m  SELECT "pubs".* FROM "pubs"
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered pubs/index.html.erb within layouts/application (56.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered shared/_navigation.html.erb (33.6ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 1106ms (Views: 1047.7ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/application.self-b4ffb22efaf5425c8dcf3f66f435fc7bad218c6454f3a24e094244b399c28f4a.css?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-02-15 01:19:35 -0800
+  [1m[36m (143.5ms)[0m  [1mDROP DATABASE IF EXISTS "pubhub_dev"[0m
+  [1m[35m (129.0ms)[0m  DROP DATABASE IF EXISTS "pubhub_test"
+  [1m[36m (723.5ms)[0m  [1mCREATE DATABASE "pubhub_dev" ENCODING = 'unicode'[0m
+  [1m[35m (254.7ms)[0m  CREATE DATABASE "pubhub_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.3ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.7ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (7.7ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'astein@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["full_name", "Albert Einstein"], ["email", "astein@gmail.com"], ["password_digest", "$2a$10$kP5phoNu494NIuMaJxUzmONSvRSNabyeE2RI1GmOsSaz4PZb5Lar."], ["created_at", "2016-02-15 09:21:14.285026"], ["updated_at", "2016-02-15 09:21:14.285026"]]
+  [1m[36m (15.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'dmoney@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["full_name", "Charles Darwin"], ["email", "dmoney@gmail.com"], ["password_digest", "$2a$10$3d0ZQYilErovhfmIRTu2GO.UhzFhyjaYaqrtrbkoSxH0CUjlXFV4i"], ["created_at", "2016-02-15 09:21:14.379681"], ["updated_at", "2016-02-15 09:21:14.379681"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'The theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "The theory of relativity"], ["content", "Lorem ipsum..."], ["url", "www.google.com"], ["user_id", 1], ["created_at", "2016-02-15 09:21:14.400622"], ["updated_at", "2016-02-15 09:21:14.400622"]]
+  [1m[36m (15.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'The origin of species' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "The origin of species"], ["content", "Lorem ipsum..."], ["url", "www.yahoo.com"], ["user_id", 2], ["created_at", "2016-02-15 09:21:14.420599"], ["updated_at", "2016-02-15 09:21:14.420599"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:21:26 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.6ms)[0m  SELECT "pubs".* FROM "pubs"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered pubs/index.html.erb within layouts/application (56.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (21.8ms)
+Completed 500 Internal Server Error in 951ms (ActiveRecord: 6.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/views/shared/_navigation.html.erb:12:in `_app_views_shared__navigation_html_erb__4093238106167676126_70291083791180'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___2520035147739995011_70291056698600'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (515.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (545.3ms)
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:21:34 -0800
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.3ms)[0m  SELECT "pubs".* FROM "pubs"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered pubs/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (2.4ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.0ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/views/shared/_navigation.html.erb:12:in `_app_views_shared__navigation_html_erb__4093238106167676126_70291083791180'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___2520035147739995011_70291056698600'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (36.5ms)
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:21:36 -0800
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.3ms)[0m  SELECT "pubs".* FROM "pubs"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered pubs/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (4.3ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.9ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/views/shared/_navigation.html.erb:12:in `_app_views_shared__navigation_html_erb__4093238106167676126_70291083791180'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___2520035147739995011_70291056698600'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (38.8ms)
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:22:53 -0800
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.3ms)[0m  SELECT "pubs".* FROM "pubs"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered pubs/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (3.4ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.9ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/views/shared/_navigation.html.erb:12:in `_app_views_shared__navigation_html_erb__4093238106167676126_70291083791180'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___2520035147739995011_70291056698600'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (83.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (102.6ms)
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:22:56 -0800
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.4ms)[0m  SELECT "pubs".* FROM "pubs"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered pubs/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (2.4ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 1.0ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/views/shared/_navigation.html.erb:12:in `_app_views_shared__navigation_html_erb__4093238106167676126_70291083791180'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___2520035147739995011_70291056698600'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (38.8ms)
+  [1m[36m (116.7ms)[0m  [1mDROP DATABASE IF EXISTS "pubhub_dev"[0m
+  [1m[35m (116.8ms)[0m  DROP DATABASE IF EXISTS "pubhub_test"
+  [1m[36m (390.9ms)[0m  [1mCREATE DATABASE "pubhub_dev" ENCODING = 'unicode'[0m
+  [1m[35m (276.0ms)[0m  CREATE DATABASE "pubhub_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.4ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.8ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.7ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.5ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'The theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "The theory of relativity"], ["content", "Lorem ipsum..."], ["url", "www.google.com"], ["user_id", 1], ["created_at", "2016-02-15 09:23:09.092273"], ["updated_at", "2016-02-15 09:23:09.092273"]]
+  [1m[36m (15.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'The origin of species' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "The origin of species"], ["content", "Lorem ipsum..."], ["url", "www.yahoo.com"], ["user_id", 1], ["created_at", "2016-02-15 09:23:09.112617"], ["updated_at", "2016-02-15 09:23:09.112617"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:23:55 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.6ms)[0m  SELECT "pubs".* FROM "pubs"
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered pubs/index.html.erb within layouts/application (51.0ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 6.5ms)
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+    2:   <% @pubs.each do |pub| %>
+    3:     <li>
+    4:       <%= link_to pub.title, "pub" %>
+    5:       <p>posted by <%= link_to pub.user.full_name, "pub.user" %>. <%= link_to "PDF", "pub.url" %></p>
+    6:     </li>
+    7:   <% end %>
+    8: </ul>
+  app/views/pubs/index.html.erb:5:in `block in _app_views_pubs_index_html_erb___1464922171774172488_70255489233180'
+  app/views/pubs/index.html.erb:2:in `_app_views_pubs_index_html_erb___1464922171774172488_70255489233180'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (521.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (548.2ms)
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:27:25 -0800
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.3ms)[0m  SELECT "pubs".* FROM "pubs"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered pubs/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+    2:   <% @pubs.each do |pub| %>
+    3:     <li>
+    4:       <%= link_to pub.title, "pub" %>
+    5:       <p>posted by <%= link_to pub.user.full_name, "pub.user" %>. <%= link_to "PDF", "pub.url" %></p>
+    6:     </li>
+    7:   <% end %>
+    8: </ul>
+  app/views/pubs/index.html.erb:5:in `block in _app_views_pubs_index_html_erb___1464922171774172488_70255489233180'
+  app/views/pubs/index.html.erb:2:in `_app_views_pubs_index_html_erb___1464922171774172488_70255489233180'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (52.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (38.9ms)
+  [1m[36m (117.3ms)[0m  [1mDROP DATABASE IF EXISTS "pubhub_dev"[0m
+  [1m[35m (116.2ms)[0m  DROP DATABASE IF EXISTS "pubhub_test"
+  [1m[36m (577.7ms)[0m  [1mCREATE DATABASE "pubhub_dev" ENCODING = 'unicode'[0m
+  [1m[35m (260.7ms)[0m  CREATE DATABASE "pubhub_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.8ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.1ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (2.5ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.4ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'The theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "The theory of relativity"], ["content", "Lorem ipsum..."], ["url", "www.google.com"], ["user_id", 2], ["created_at", "2016-02-15 09:27:53.110300"], ["updated_at", "2016-02-15 09:27:53.110300"]]
+  [1m[36m (15.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'The origin of species' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "The origin of species"], ["content", "Lorem ipsum..."], ["url", "www.yahoo.com"], ["user_id", 2], ["created_at", "2016-02-15 09:27:53.130628"], ["updated_at", "2016-02-15 09:27:53.130628"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:28:13 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.7ms)[0m  SELECT "pubs".* FROM "pubs"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered pubs/index.html.erb within layouts/application (61.2ms)
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 5.6ms)
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+    2:   <% @pubs.each do |pub| %>
+    3:     <li>
+    4:       <%= link_to pub.title, "pub" %>
+    5:       <p>posted by <%= link_to pub.user.full_name, "pub.user" %>. <%= link_to "PDF", "pub.url" %></p>
+    6:     </li>
+    7:   <% end %>
+    8: </ul>
+  app/views/pubs/index.html.erb:5:in `block in _app_views_pubs_index_html_erb___4448166674995933060_70116652839640'
+  app/views/pubs/index.html.erb:2:in `_app_views_pubs_index_html_erb___4448166674995933060_70116652839640'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (513.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (540.4ms)
+  [1m[36m (117.9ms)[0m  [1mDROP DATABASE IF EXISTS "pubhub_dev"[0m
+  [1m[35m (118.4ms)[0m  DROP DATABASE IF EXISTS "pubhub_test"
+  [1m[36m (298.0ms)[0m  [1mCREATE DATABASE "pubhub_dev" ENCODING = 'unicode'[0m
+  [1m[35m (263.0ms)[0m  CREATE DATABASE "pubhub_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.0ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (3.0ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (7.7ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.2ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'The theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "The theory of relativity"], ["content", "Lorem ipsum..."], ["url", "www.google.com"], ["created_at", "2016-02-15 09:28:56.320341"], ["updated_at", "2016-02-15 09:28:56.320341"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'The origin of species' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "The origin of species"], ["content", "Lorem ipsum..."], ["url", "www.yahoo.com"], ["created_at", "2016-02-15 09:28:56.325725"], ["updated_at", "2016-02-15 09:28:56.325725"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:29:06 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.5ms)[0m  SELECT "pubs".* FROM "pubs"
+  Rendered pubs/index.html.erb within layouts/application (23.6ms)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 2.6ms)
+
+ActionView::Template::Error (undefined method `full_name' for nil:NilClass):
+    2:   <% @pubs.each do |pub| %>
+    3:     <li>
+    4:       <%= link_to pub.title, "pub" %>
+    5:       <p>posted by <%= link_to pub.user.full_name, "pub.user" %>. <%= link_to "PDF", "pub.url" %></p>
+    6:     </li>
+    7:   <% end %>
+    8: </ul>
+  app/views/pubs/index.html.erb:5:in `block in _app_views_pubs_index_html_erb___1022353531950020451_70313727161060'
+  app/views/pubs/index.html.erb:2:in `_app_views_pubs_index_html_erb___1022353531950020451_70313727161060'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (471.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (496.6ms)
+  [1m[36m (117.1ms)[0m  [1mDROP DATABASE IF EXISTS "pubhub_dev"[0m
+  [1m[35m (162.7ms)[0m  DROP DATABASE IF EXISTS "pubhub_test"
+  [1m[36m (551.4ms)[0m  [1mCREATE DATABASE "pubhub_dev" ENCODING = 'unicode'[0m
+  [1m[35m (247.9ms)[0m  CREATE DATABASE "pubhub_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.7ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.5ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.6ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (116.9ms)[0m  [1mDROP DATABASE IF EXISTS "pubhub_dev"[0m
+  [1m[35m (118.0ms)[0m  DROP DATABASE IF EXISTS "pubhub_test"
+  [1m[36m (294.2ms)[0m  [1mCREATE DATABASE "pubhub_dev" ENCODING = 'unicode'[0m
+  [1m[35m (249.1ms)[0m  CREATE DATABASE "pubhub_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.1ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.9ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.5ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ds@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["full_name", "Daniel S"], ["email", "ds@email.com"], ["password_digest", "$2a$10$rwnZF26Niu6M50TnGjtR4eUVYSyQ.AyEWDCn8JzOZlmUpsDh6mvGC"], ["created_at", "2016-02-15 09:31:26.265934"], ["updated_at", "2016-02-15 09:31:26.265934"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'The theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "The theory of relativity"], ["content", "Lorem ipsum..."], ["url", "www.google.com"], ["user_id", 1], ["created_at", "2016-02-15 09:31:26.287663"], ["updated_at", "2016-02-15 09:31:26.287663"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'The origin of species' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["title", "The origin of species"], ["content", "Lorem ipsum..."], ["url", "www.yahoo.com"], ["user_id", 1], ["created_at", "2016-02-15 09:31:26.292070"], ["updated_at", "2016-02-15 09:31:26.292070"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:31:34 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.5ms)[0m  SELECT "pubs".* FROM "pubs"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered pubs/index.html.erb within layouts/application (40.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (22.8ms)
+Completed 500 Internal Server Error in 1050ms (ActiveRecord: 5.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/views/shared/_navigation.html.erb:12:in `_app_views_shared__navigation_html_erb___4431884659792922506_70120771550480'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__2103413977720662297_70120734158440'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (484.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (506.3ms)
+  [1m[36m (117.9ms)[0m  [1mDROP DATABASE IF EXISTS "pubhub_dev"[0m
+  [1m[35m (117.5ms)[0m  DROP DATABASE IF EXISTS "pubhub_test"
+  [1m[36m (317.1ms)[0m  [1mCREATE DATABASE "pubhub_dev" ENCODING = 'unicode'[0m
+  [1m[35m (250.9ms)[0m  CREATE DATABASE "pubhub_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.5ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (3.3ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (7.2ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ds@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["full_name", "Daniel S"], ["email", "ds@email.com"], ["password_digest", "$2a$10$XuaG3PCfAq4cWHpdLRPHuua6arPeEo3HeRQ.1YW37tDWqtKkXFu3e"], ["created_at", "2016-02-15 09:32:17.300361"], ["updated_at", "2016-02-15 09:32:17.300361"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[36m (117.2ms)[0m  [1mDROP DATABASE IF EXISTS "pubhub_dev"[0m
+  [1m[35m (118.0ms)[0m  DROP DATABASE IF EXISTS "pubhub_test"
+  [1m[36m (311.3ms)[0m  [1mCREATE DATABASE "pubhub_dev" ENCODING = 'unicode'[0m
+  [1m[35m (264.6ms)[0m  CREATE DATABASE "pubhub_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.2ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.2ms)[0m  CREATE TABLE "pubs" ("id" serial primary key, "user_id" integer, "category_id" integer, "title" character varying, "url" character varying, "content" text, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "full_name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160215084127')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160212041159')
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'daniel@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["full_name", "Daniel"], ["email", "daniel@email.com"], ["password_digest", "$2a$10$XUCWIS8PFV1S7sNn5igbGeL48566zRy6setfTu/iKpWQKXnt6DxMu"], ["created_at", "2016-02-15 09:37:01.374559"], ["updated_at", "2016-02-15 09:37:01.374559"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:38:29 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.5ms)[0m  SELECT "pubs".* FROM "pubs"
+  Rendered pubs/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (34.6ms)
+Completed 500 Internal Server Error in 941ms (ActiveRecord: 5.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/views/shared/_navigation.html.erb:12:in `_app_views_shared__navigation_html_erb___285148624882229653_70129756535120'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1907390073193795316_70129726287360'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (489.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (510.5ms)
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:38:35 -0800
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.3ms)[0m  SELECT "pubs".* FROM "pubs"
+  Rendered pubs/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (4.1ms)
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 0.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/views/shared/_navigation.html.erb:12:in `_app_views_shared__navigation_html_erb___285148624882229653_70129756535120'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1907390073193795316_70129726287360'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (38.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mPub Load (0.5ms)[0m  [1mSELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" DESC LIMIT 1[0m
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:40:05 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.5ms)[0m  SELECT "pubs".* FROM "pubs"
+  Rendered pubs/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (33.5ms)
+Completed 500 Internal Server Error in 859ms (ActiveRecord: 4.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/views/shared/_navigation.html.erb:12:in `_app_views_shared__navigation_html_erb__1081535198740236606_70176809257500'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1129249133817380078_70176761758820'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (472.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (495.2ms)
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:40:10 -0800
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.3ms)[0m  SELECT "pubs".* FROM "pubs"
+  Rendered pubs/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (2.9ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/views/shared/_navigation.html.erb:12:in `_app_views_shared__navigation_html_erb__1081535198740236606_70176809257500'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1129249133817380078_70176761758820'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.2ms)
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:40:13 -0800
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.3ms)[0m  SELECT "pubs".* FROM "pubs"
+  Rendered pubs/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (2.9ms)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/views/shared/_navigation.html.erb:12:in `_app_views_shared__navigation_html_erb__1081535198740236606_70176809257500'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1129249133817380078_70176761758820'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (37.5ms)
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:40:16 -0800
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.4ms)[0m  SELECT "pubs".* FROM "pubs"
+  Rendered pubs/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (3.2ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.7ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/views/shared/_navigation.html.erb:12:in `_app_views_shared__navigation_html_erb__1081535198740236606_70176809257500'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1129249133817380078_70176761758820'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (94.1ms)
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:40:20 -0800
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.3ms)[0m  SELECT "pubs".* FROM "pubs"
+  Rendered pubs/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (4.0ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.7ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/views/shared/_navigation.html.erb:12:in `_app_views_shared__navigation_html_erb__1081535198740236606_70176809257500'
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1129249133817380078_70176761758820'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (38.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-15 01:40:25 -0800
+Processing by PagesController#front as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/controllers/pages_controller.rb:3:in `front'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.9ms)
+
+
+Started GET "/" for ::1 at 2016-02-15 01:40:25 -0800
+Processing by PagesController#front as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/controllers/pages_controller.rb:3:in `front'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.2ms)
+
+
+Started GET "/" for ::1 at 2016-02-15 01:40:29 -0800
+Processing by PagesController#front as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/controllers/pages_controller.rb:3:in `front'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (38.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/" for ::1 at 2016-02-15 01:42:21 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#front as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Completed 404 Not Found in 32ms (ActiveRecord: 3.6ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/controllers/pages_controller.rb:3:in `front'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (497.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (522.6ms)
+
+
+Started GET "/" for ::1 at 2016-02-15 01:47:05 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#front as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Completed 404 Not Found in 75ms (ActiveRecord: 5.7ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  app/controllers/application_controller.rb:13:in `current_user'
+  app/controllers/pages_controller.rb:3:in `front'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (573.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (604.4ms)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'dan@email.com' LIMIT 1
+  [1m[36mSQL (20.2ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["full_name", "Dan S"], ["email", "dan@email.com"], ["password_digest", "$2a$10$9Hmz4p/AbtEuzX9GG9JwQueLe8lQKnO1OWsjWttZ0Q0oR3K2MdvSu"], ["id", 3], ["created_at", "2016-02-15 09:48:55.070458"], ["updated_at", "2016-02-15 09:48:55.070458"]]
+  [1m[35m (12.1ms)[0m  COMMIT
+
+
+Started GET "/" for ::1 at 2016-02-15 01:49:10 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#front as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 52ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:49:10 -0800
+Processing by PubsController#index as HTML
+  [1m[36mPub Load (0.5ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  Rendered pubs/index.html.erb within layouts/application (11.5ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (4.7ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 2147ms (Views: 2131.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/application.self-b4ffb22efaf5425c8dcf3f66f435fc7bad218c6454f3a24e094244b399c28f4a.css?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-02-15 01:49:13 -0800
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:52:38 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.5ms)[0m  SELECT "pubs".* FROM "pubs"
+  Rendered pubs/index.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered shared/_navigation.html.erb (69.2ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 1028ms (Views: 995.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/application.self-b4ffb22efaf5425c8dcf3f66f435fc7bad218c6454f3a24e094244b399c28f4a.css?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-02-15 01:52:40 -0800
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.9ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'title' LIMIT 1
+  [1m[36mSQL (15.3ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "title"], ["content", "abstract"], ["url", "www.google.com"], ["user_id", 3], ["created_at", "2016-02-15 09:53:50.754197"], ["updated_at", "2016-02-15 09:53:50.754197"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:54:08 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.5ms)[0m  SELECT "pubs".* FROM "pubs"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered pubs/index.html.erb within layouts/application (95.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (6.8ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 647ms (Views: 626.9ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/application.self-b4ffb22efaf5425c8dcf3f66f435fc7bad218c6454f3a24e094244b399c28f4a.css?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-02-15 01:54:09 -0800
+
+
+Started GET "/pub.url" for ::1 at 2016-02-15 01:54:18 -0800
+
+ActionController::RoutingError (No route matches [GET] "/pub.url"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (13.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (627.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (656.5ms)
+
+
+Started GET "/pub.user" for ::1 at 2016-02-15 01:54:22 -0800
+
+ActionController::RoutingError (No route matches [GET] "/pub.user"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (25.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (37.2ms)
+
+
+Started GET "/pub" for ::1 at 2016-02-15 01:54:26 -0800
+
+ActionController::RoutingError (No route matches [GET] "/pub"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (39.1ms)
+
+
+Started GET "/pub" for ::1 at 2016-02-15 01:54:26 -0800
+
+ActionController::RoutingError (No route matches [GET] "/pub"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (82.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (101.2ms)
+
+
+Started GET "/pub.user" for ::1 at 2016-02-15 01:54:30 -0800
+
+ActionController::RoutingError (No route matches [GET] "/pub.user"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (37.9ms)
+
+
+Started GET "/pub" for ::1 at 2016-02-15 01:54:44 -0800
+
+ActionController::RoutingError (No route matches [GET] "/pub"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (37.5ms)
+
+
+Started GET "/pub" for ::1 at 2016-02-15 01:54:44 -0800
+
+ActionController::RoutingError (No route matches [GET] "/pub"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (37.5ms)
+
+
+Started GET "/pub.url" for ::1 at 2016-02-15 01:54:49 -0800
+
+ActionController::RoutingError (No route matches [GET] "/pub.url"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.2ms)
+
+
+Started GET "/pub" for ::1 at 2016-02-15 01:55:06 -0800
+
+ActionController::RoutingError (No route matches [GET] "/pub"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (22.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.0ms)
+
+
+Started GET "/pub" for ::1 at 2016-02-15 01:55:06 -0800
+
+ActionController::RoutingError (No route matches [GET] "/pub"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (23.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (32.7ms)
+
+
+Started GET "/pub" for ::1 at 2016-02-15 01:55:12 -0800
+
+ActionController::RoutingError (No route matches [GET] "/pub"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (36.4ms)
+
+
+Started GET "/pub" for ::1 at 2016-02-15 01:55:12 -0800
+
+ActionController::RoutingError (No route matches [GET] "/pub"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/danielschonfeld/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (24.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.8ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danielschonfeld/.rvm/gems/ruby-2.0.0-p643@app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (33.1ms)
+
+
+Started GET "/home" for ::1 at 2016-02-15 01:55:43 -0800
+Processing by PubsController#index as HTML
+  [1m[35mPub Load (0.3ms)[0m  SELECT "pubs".* FROM "pubs"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered pubs/index.html.erb within layouts/application (3.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navigation.html.erb (2.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-b4ffb22efaf5425c8dcf3f66f435fc7bad218c6454f3a24e094244b399c28f4a.css?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-02-15 01:55:44 -0800

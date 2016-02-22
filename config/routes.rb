@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :pubs, only: [:new, :create, :show] do 
     resources :reviews, only: [:create]
   end
+  resources :relationships, only: [:create]
 end

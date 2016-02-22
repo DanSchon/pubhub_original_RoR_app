@@ -1,5 +1,5 @@
 <%= render 'shared/header', header: "Profile: #{@user.full_name}" %>
-
+<%= link_to "Follow", relationships_path(leader_id: @user.id), class: "btn btn-default pull-right", method: :post unless @user == current_user || current_user.already_follows?(@user) %>
 <h5><%= @user.full_name %>'s Activity</h5>
 
 <ul class='nav nav-tabs'>

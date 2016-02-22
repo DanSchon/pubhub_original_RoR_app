@@ -11935,3 +11935,699 @@ Processing by RelationshipsController#index as HTML
 Completed 200 OK in 115ms (Views: 9.2ms | ActiveRecord: 0.3ms)
   [1m[36mRelationship Load (0.3ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 9]]
   [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ivy@jenkins.io' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ivy@jenkins.io' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$laVdZqh23pJRRVyacZZ9FeR/pGh/hMGGqEUV6hq/m8IDdsPlzLJFG"], ["email", "ivy@jenkins.io"], ["full_name", "Garnet Beahan Jr."], ["created_at", "2016-02-22 07:39:33.958676"], ["updated_at", "2016-02-22 07:39:33.958676"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'carmelo@mueller.net' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'carmelo@mueller.net' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$59xZgKp9CDULs3Po7cL3DeK7MFy41c3TeRE9ILHDso6VqwI9KLl.i"], ["email", "carmelo@mueller.net"], ["full_name", "Ms. Fletcher Kassulke"], ["created_at", "2016-02-22 07:39:33.966068"], ["updated_at", "2016-02-22 07:39:33.966068"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 12], ["follower_id", 11], ["created_at", "2016-02-22 07:39:34.076101"], ["updated_at", "2016-02-22 07:39:34.076101"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by RelationshipsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 11]]
+  Rendered relationships/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 111ms (Views: 94.9ms | ActiveRecord: 0.3ms)
+  [1m[36mRelationship Load (0.4ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 11]]
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'emmet_sanford@rutherford.io' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'emmet_sanford@rutherford.io' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$ZUMt7ZNailijrv6A8DZfK.EAESsZV6QsIlkYqCVp514FhEHtxz0Su"], ["email", "emmet_sanford@rutherford.io"], ["full_name", "Adella Kovacek"], ["created_at", "2016-02-22 07:39:34.280972"], ["updated_at", "2016-02-22 07:39:34.280972"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'henderson@rau.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'henderson@rau.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$4ShmNhJEzhhxQo3jmuydhOFrgCJof1z9/ljOY/hbfgaUgKxHP/Uiu"], ["email", "henderson@rau.org"], ["full_name", "Trinity Little"], ["created_at", "2016-02-22 07:39:34.286073"], ["updated_at", "2016-02-22 07:39:34.286073"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by RelationshipsController#create as HTML
+  Parameters: {"leader_id"=>"14"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 14], ["follower_id", 13], ["created_at", "2016-02-22 07:39:34.290038"], ["updated_at", "2016-02-22 07:39:34.290038"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/following
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35mRelationship Load (0.3ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1  ORDER BY "relationships"."id" ASC LIMIT 1  [["follower_id", 13]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'oda@stehr.net' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'oda@stehr.net' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$nocXmbpqmK9GJosrRHfAmugrti9fvBlUPGgRd9o/hsiPfhCm2KuuC"], ["email", "oda@stehr.net"], ["full_name", "Miss Gordon D'Amore"], ["created_at", "2016-02-22 07:39:34.301940"], ["updated_at", "2016-02-22 07:39:34.301940"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'leif@boehm.co' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'leif@boehm.co' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$M39y.Zu8D6ngRzJWYb3.2uwzoi3vdFGcM5OeUm4h9zOpeSgmZhKou"], ["email", "leif@boehm.co"], ["full_name", "Lurline Morissette"], ["created_at", "2016-02-22 07:39:34.307729"], ["updated_at", "2016-02-22 07:39:34.307729"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by RelationshipsController#create as HTML
+  Parameters: {"leader_id"=>"16"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 16], ["follower_id", 15], ["created_at", "2016-02-22 07:39:34.313213"], ["updated_at", "2016-02-22 07:39:34.313213"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/following
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan.jast@macgyver.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'alan.jast@macgyver.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$9okDT04kk3jSPkFFoSmEW.3SykDCbY/0ncV1MECz9soc0KTetEMD2"], ["email", "alan.jast@macgyver.com"], ["full_name", "Braden Rodriguez"], ["created_at", "2016-02-22 07:41:57.747403"], ["updated_at", "2016-02-22 07:41:57.747403"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anibal.beahan@predovic.io' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anibal.beahan@predovic.io' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$6boDMtX/.wYx5aqGd55afuMCS0ApBcj.PBBjQJ7xKcC8EdKSc3g3i"], ["email", "anibal.beahan@predovic.io"], ["full_name", "Maegan Jast"], ["created_at", "2016-02-22 07:41:57.754668"], ["updated_at", "2016-02-22 07:41:57.754668"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 18], ["follower_id", 17], ["created_at", "2016-02-22 07:41:57.807779"], ["updated_at", "2016-02-22 07:41:57.807779"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by RelationshipsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 17]]
+  Rendered relationships/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 191ms (Views: 80.9ms | ActiveRecord: 0.3ms)
+  [1m[36mRelationship Load (0.4ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 17]]
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'ted_harber@kunde.org' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'ted_harber@kunde.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$xro7HH7sZDokMA4DsEzSzubzOKlI49wqV3H.oTDP91Gzx6P1.HD0u"], ["email", "ted_harber@kunde.org"], ["full_name", "Ambrose Nienow DDS"], ["created_at", "2016-02-22 07:41:58.037500"], ["updated_at", "2016-02-22 07:41:58.037500"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'noemie.wolff@maggiovolkman.co' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'noemie.wolff@maggiovolkman.co' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$B4VBiqdjohCVeYtgCiNHoOHYS1/w8vCrRtRbLrTmjbbShHio.tKES"], ["email", "noemie.wolff@maggiovolkman.co"], ["full_name", "Jabari Dibbert PhD"], ["created_at", "2016-02-22 07:41:58.043238"], ["updated_at", "2016-02-22 07:41:58.043238"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by RelationshipsController#create as HTML
+  Parameters: {"leader_id"=>"20"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 19]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 20], ["follower_id", 19], ["created_at", "2016-02-22 07:41:58.047150"], ["updated_at", "2016-02-22 07:41:58.047150"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/following
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1  ORDER BY "relationships"."id" ASC LIMIT 1  [["follower_id", 19]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 20]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'katrina.mosciski@blickswaniawski.info' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'katrina.mosciski@blickswaniawski.info' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$TrsqTAF49O6Lpi3skE6C/eTofSVoVD3TyyEpC8f1TGRPslF3hJa/i"], ["email", "katrina.mosciski@blickswaniawski.info"], ["full_name", "Idell Reilly"], ["created_at", "2016-02-22 07:41:58.059354"], ["updated_at", "2016-02-22 07:41:58.059354"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'madalyn@hintzabshire.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'madalyn@hintzabshire.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$n5.Q.hfhiuA9FURiMgCa5.6/ISJLbdLtXkldnOn6o.eYJ1UvS42aq"], ["email", "madalyn@hintzabshire.com"], ["full_name", "Rex O'Kon II"], ["created_at", "2016-02-22 07:41:58.064618"], ["updated_at", "2016-02-22 07:41:58.064618"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by RelationshipsController#create as HTML
+  Parameters: {"leader_id"=>"22"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 22], ["follower_id", 21], ["created_at", "2016-02-22 07:41:58.068547"], ["updated_at", "2016-02-22 07:41:58.068547"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/following
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'robbie@oconnell.org' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'robbie@oconnell.org' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$/fTHb5VoywsunY8rfhVUROolmDH6IciobbtJJ4dQLC0W3pHxS6fAy"], ["email", "robbie@oconnell.org"], ["full_name", "Marcelina Conroy"], ["created_at", "2016-02-22 07:41:58.077151"], ["updated_at", "2016-02-22 07:41:58.077151"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'abbie.treutel@stromanjones.co' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'abbie.treutel@stromanjones.co' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$kRsV.14yB8fElyMCgZKNq.JwgnzJnhYTIdBpCKup2PgGccUOco8GC"], ["email", "abbie.treutel@stromanjones.co"], ["full_name", "Enrico Gulgowski"], ["created_at", "2016-02-22 07:41:58.082605"], ["updated_at", "2016-02-22 07:41:58.082605"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leader_id", 24], ["follower_id", 23], ["created_at", "2016-02-22 07:41:58.084662"], ["updated_at", "2016-02-22 07:41:58.084662"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RelationshipsController#create as HTML
+  Parameters: {"leader_id"=>"24"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leader_id", 24], ["follower_id", 23], ["created_at", "2016-02-22 07:41:58.088967"], ["updated_at", "2016-02-22 07:41:58.088967"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/following
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "relationships"[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (17.1ms)[0m  INSERT INTO "users" ("password_digest", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["password_digest", "$2a$04$uXosUHGNZLwGkjUQZTWs5uTK5Yls8IDtP1muxvhvKeAGxib/1Qw0q"], ["created_at", "2016-02-22 07:59:05.038962"], ["updated_at", "2016-02-22 07:59:05.038962"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "an arbitrary value"], ["updated_at", "2016-02-22 07:59:05.058761"], ["id", 25]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'aiden@bednar.name' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'aiden@bednar.name' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$xZ3nNCa8D4gewM7JZ9kVGucuQRDV./3/Cpno4/vYHLDZiPvx15xTG"], ["email", "aiden@bednar.name"], ["full_name", "Shaun Haag"], ["created_at", "2016-02-22 07:59:05.345875"], ["updated_at", "2016-02-22 07:59:05.345875"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'evelyn.goodwin@kutchthiel.name' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'evelyn.goodwin@kutchthiel.name' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$HbJ/ZSBlT6RDvBQYeF35kOGuWLEK73TXJShwZuK2hdyjTx0qOK206"], ["email", "evelyn.goodwin@kutchthiel.name"], ["full_name", "Else Kerluke"], ["created_at", "2016-02-22 07:59:05.351803"], ["updated_at", "2016-02-22 07:59:05.351803"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 27], ["follower_id", 26], ["created_at", "2016-02-22 07:59:05.491396"], ["updated_at", "2016-02-22 07:59:05.491396"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'krista.witting@berge.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'krista.witting@berge.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$1611XrXqnKhMC37JAtC4kOOwI.UHuDA.3hHzFC9jVf4k3K9ZCfba."], ["email", "krista.witting@berge.com"], ["full_name", "Eugene Cole"], ["created_at", "2016-02-22 07:59:05.499957"], ["updated_at", "2016-02-22 07:59:05.499957"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'sonny.lebsack@abshire.io' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'sonny.lebsack@abshire.io' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$CHVEt4tHu8EbGv6DNHqkNuOcFC1FCro3FNJS4KpTaPoPqLyLdYXda"], ["email", "sonny.lebsack@abshire.io"], ["full_name", "Jacklyn Christiansen III"], ["created_at", "2016-02-22 07:59:05.505585"], ["updated_at", "2016-02-22 07:59:05.505585"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leader_id", 28], ["follower_id", 29], ["created_at", "2016-02-22 07:59:05.508133"], ["updated_at", "2016-02-22 07:59:05.508133"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("password_digest", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["password_digest", "$2a$04$PxlYq6h5AJNaZcJeYbjskuQqSON9HjUZaWPcYc8soco5Vn2W1OYrm"], ["created_at", "2016-02-22 07:59:30.588416"], ["updated_at", "2016-02-22 07:59:30.588416"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "an arbitrary value"], ["updated_at", "2016-02-22 07:59:30.591582"], ["id", 30]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jarrell@hintzhoppe.name' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jarrell@hintzhoppe.name' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$BkJzLW4O2bGd9eGvwtf5Jeei92.P7bYYni6LkRdr8nTLRESg9D7hS"], ["email", "jarrell@hintzhoppe.name"], ["full_name", "Adolfo Schimmel MD"], ["created_at", "2016-02-22 07:59:30.633484"], ["updated_at", "2016-02-22 07:59:30.633484"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'braulio_powlowski@conroy.net' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'braulio_powlowski@conroy.net' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$FKEELaVEXlDwjygfoOq6YOGod0uHVYzWCtOQTVybZy27lfpElmGLm"], ["email", "braulio_powlowski@conroy.net"], ["full_name", "Francis Muller"], ["created_at", "2016-02-22 07:59:30.639623"], ["updated_at", "2016-02-22 07:59:30.639623"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 32], ["follower_id", 31], ["created_at", "2016-02-22 07:59:30.701757"], ["updated_at", "2016-02-22 07:59:30.701757"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mRelationship Load (0.3ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1  [["follower_id", 31]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'lolita_quitzon@quigleybruen.io' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'lolita_quitzon@quigleybruen.io' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$s24J95ynUUm4StlF1X67Ie8XhWdZw/CGpDWFaIObzauXSgYVud6s6"], ["email", "lolita_quitzon@quigleybruen.io"], ["full_name", "Percival Abbott"], ["created_at", "2016-02-22 07:59:30.796229"], ["updated_at", "2016-02-22 07:59:30.796229"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'elinore.bernier@wiegand.net' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'elinore.bernier@wiegand.net' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$IbUVERd6gvUEMlSgZqRB5O8gPlQEPAwVgRFOMl.xcTgdcaPw5mxHK"], ["email", "elinore.bernier@wiegand.net"], ["full_name", "Isac Moore III"], ["created_at", "2016-02-22 07:59:30.801954"], ["updated_at", "2016-02-22 07:59:30.801954"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leader_id", 33], ["follower_id", 34], ["created_at", "2016-02-22 07:59:30.804585"], ["updated_at", "2016-02-22 07:59:30.804585"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 33]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("password_digest", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["password_digest", "$2a$04$QY4EtNzrhI9VYuGpjCNK9et4YOfMA12cdg4W27DsHg9/Hg3rqmfa6"], ["created_at", "2016-02-22 08:00:51.308689"], ["updated_at", "2016-02-22 08:00:51.308689"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "an arbitrary value"], ["updated_at", "2016-02-22 08:00:51.311338"], ["id", 35]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ben.swaniawski@lakin.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ben.swaniawski@lakin.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$bCwoP2rCmb91e7RwVft9TOT3qlo2SdmuiN5erkDafKiQEByudIoQe"], ["email", "ben.swaniawski@lakin.com"], ["full_name", "Pat O'Connell"], ["created_at", "2016-02-22 08:00:51.352964"], ["updated_at", "2016-02-22 08:00:51.352964"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'maryse@brekkedubuque.org' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'maryse@brekkedubuque.org' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$yMwj.IV6XoH3xM9dKbPx8uqM4PamRLruW3tRloydKh5ga3XLQntRG"], ["email", "maryse@brekkedubuque.org"], ["full_name", "Alia Miller"], ["created_at", "2016-02-22 08:00:51.358189"], ["updated_at", "2016-02-22 08:00:51.358189"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 37], ["follower_id", 36], ["created_at", "2016-02-22 08:00:51.422254"], ["updated_at", "2016-02-22 08:00:51.422254"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mRelationship Load (0.3ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1  [["follower_id", 36]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 37]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'bette@raynorstanton.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'bette@raynorstanton.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$wHD9ZASoYzbq0rIJpfwMCuydu6pcMIhUbe6VgMhk1Sm0Los34gJ/S"], ["email", "bette@raynorstanton.com"], ["full_name", "Desmond Rutherford"], ["created_at", "2016-02-22 08:00:51.441669"], ["updated_at", "2016-02-22 08:00:51.441669"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'tatyana@mraz.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'tatyana@mraz.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$FQc3JtDF40psawfYqf6bk.eEBH2j1DtpHkcfSFU49z2J7DGIIw5/u"], ["email", "tatyana@mraz.com"], ["full_name", "Deonte Gusikowski III"], ["created_at", "2016-02-22 08:00:51.446901"], ["updated_at", "2016-02-22 08:00:51.446901"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leader_id", 38], ["follower_id", 39], ["created_at", "2016-02-22 08:00:51.449485"], ["updated_at", "2016-02-22 08:00:51.449485"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 38]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("password_digest", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["password_digest", "$2a$04$xrbqM7nB6JaBjm67QTMrNum.f5l0CRWQ5/uZI71AwjCAghqfId38W"], ["created_at", "2016-02-22 08:03:22.913872"], ["updated_at", "2016-02-22 08:03:22.913872"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "an arbitrary value"], ["updated_at", "2016-02-22 08:03:22.916506"], ["id", 40]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'brett.olson@schaeferkerluke.name' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'brett.olson@schaeferkerluke.name' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$M8vkKXl7avxJ4AzpUi.kZOtBWScBO8DASaYUhCcNY7XttSUcGNvy6"], ["email", "brett.olson@schaeferkerluke.name"], ["full_name", "Dr. Ilene Bartoletti"], ["created_at", "2016-02-22 08:03:22.958538"], ["updated_at", "2016-02-22 08:03:22.958538"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'lesly@pacochaschultz.net' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'lesly@pacochaschultz.net' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$v5ksLvLhgU9fIk2L2ijKueUjLzWYJRmtpOhrXXfFqEGJbmvlHzsta"], ["email", "lesly@pacochaschultz.net"], ["full_name", "Abel Lind"], ["created_at", "2016-02-22 08:03:22.963607"], ["updated_at", "2016-02-22 08:03:22.963607"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 41], ["follower_id", 42], ["created_at", "2016-02-22 08:03:23.023788"], ["updated_at", "2016-02-22 08:03:23.023788"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'cleta_schneider@crist.info' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'cleta_schneider@crist.info' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$9y0T376Zg0ffe7sSqyFG.eey2AgcV2uLGCr1uoEHV5waNx/h3rB8W"], ["email", "cleta_schneider@crist.info"], ["full_name", "Abagail Marvin DVM"], ["created_at", "2016-02-22 08:03:23.032914"], ["updated_at", "2016-02-22 08:03:23.032914"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'gwen@ondricka.name' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'gwen@ondricka.name' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$e3Qx/duw.lPboOEXVNJoIuDcM02xLEYm1RBpbP1ksi61w9RBkTzDq"], ["email", "gwen@ondricka.name"], ["full_name", "Toy Durgan"], ["created_at", "2016-02-22 08:03:23.037884"], ["updated_at", "2016-02-22 08:03:23.037884"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leader_id", 44], ["follower_id", 43], ["created_at", "2016-02-22 08:03:23.040232"], ["updated_at", "2016-02-22 08:03:23.040232"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("password_digest", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["password_digest", "$2a$04$IyWWZjBomoH6LkEXMvpsNuTEZ76ggD2cIk1wfr1n4H1Up1NQGp.me"], ["created_at", "2016-02-22 08:05:10.385251"], ["updated_at", "2016-02-22 08:05:10.385251"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "an arbitrary value"], ["updated_at", "2016-02-22 08:05:10.387899"], ["id", 45]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'madison@tillmanschimmel.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'madison@tillmanschimmel.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$7RxOFIGRGb6FlZe/Kp9/heUNk0TxBCt4OCoNgb9CGIY/DAAkozsym"], ["email", "madison@tillmanschimmel.com"], ["full_name", "Archibald Kub"], ["created_at", "2016-02-22 08:05:10.425722"], ["updated_at", "2016-02-22 08:05:10.425722"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'adelle_runolfon@hudsonking.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'adelle_runolfon@hudsonking.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$JK6OQdEh73NfUj/K3B3eM.zWk09hY/DaO52UYixPGuG0TaPxLL3Xu"], ["email", "adelle_runolfon@hudsonking.com"], ["full_name", "Ezra Monahan Sr."], ["created_at", "2016-02-22 08:05:10.431221"], ["updated_at", "2016-02-22 08:05:10.431221"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 46], ["follower_id", 47], ["created_at", "2016-02-22 08:05:10.492912"], ["updated_at", "2016-02-22 08:05:10.492912"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mRelationship Load (0.3ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1  [["follower_id", 47]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 46]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'bo@rogahnhand.co' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'bo@rogahnhand.co' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$7O414YZb5FVFUGHFKRJpBOriP.cV7nfPNV.6r/IcBV.AyPiHgHvCO"], ["email", "bo@rogahnhand.co"], ["full_name", "Maci Veum"], ["created_at", "2016-02-22 08:05:10.523612"], ["updated_at", "2016-02-22 08:05:10.523612"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mollie.bins@rolfsonhansen.info' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mollie.bins@rolfsonhansen.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$Puq4kqsk03v69Ne.q1Y7k.1XMajs8vVZdhkvQqB9mJ55VIIO63JWa"], ["email", "mollie.bins@rolfsonhansen.info"], ["full_name", "Hilario Rowe"], ["created_at", "2016-02-22 08:05:10.528702"], ["updated_at", "2016-02-22 08:05:10.528702"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leader_id", 49], ["follower_id", 48], ["created_at", "2016-02-22 08:05:10.531249"], ["updated_at", "2016-02-22 08:05:10.531249"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 49]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("password_digest", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["password_digest", "$2a$04$fWtYfPwuNHc0BBYBiu74a.i4And9ev5488AdO9ckztJyurT7oEpK."], ["created_at", "2016-02-22 08:09:21.651048"], ["updated_at", "2016-02-22 08:09:21.651048"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "an arbitrary value"], ["updated_at", "2016-02-22 08:09:21.654121"], ["id", 50]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'fritz.wehner@pacocha.biz' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'fritz.wehner@pacocha.biz' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$Vb3lf3craOctEXSqLdxisOfIgUBQSLuKRb65XSkW5eIHeGrXh2pJW"], ["email", "fritz.wehner@pacocha.biz"], ["full_name", "Justina Shields"], ["created_at", "2016-02-22 08:09:21.692573"], ["updated_at", "2016-02-22 08:09:21.692573"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'clementina@toy.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'clementina@toy.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$0Wih9.s/M.wrdvq1S0lku.bNRNmCI7k0y3NtiGzm99CIPJ2zehiTe"], ["email", "clementina@toy.com"], ["full_name", "Jace Hagenes DVM"], ["created_at", "2016-02-22 08:09:21.697845"], ["updated_at", "2016-02-22 08:09:21.697845"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 51], ["follower_id", 52], ["created_at", "2016-02-22 08:09:21.760504"], ["updated_at", "2016-02-22 08:09:21.760504"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mRelationship Load (0.3ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1  [["follower_id", 52]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 51]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'kellie.keeling@corkery.co' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'kellie.keeling@corkery.co' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$cbsAV6zgOkT8a5tTyIreOueNRYNgmOoReG1pJEna9ORqXKvKArMpq"], ["email", "kellie.keeling@corkery.co"], ["full_name", "Dr. Elza Bogan"], ["created_at", "2016-02-22 08:09:21.782545"], ["updated_at", "2016-02-22 08:09:21.782545"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'amya@dickinson.net' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'amya@dickinson.net' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$hDMD7H2kfmKu0N/dZ5NGWOdV49J9dTsjBi3cwANN67GtOqzF49k/m"], ["email", "amya@dickinson.net"], ["full_name", "Layla Gerlach"], ["created_at", "2016-02-22 08:09:21.787425"], ["updated_at", "2016-02-22 08:09:21.787425"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leader_id", 54], ["follower_id", 53], ["created_at", "2016-02-22 08:09:21.789595"], ["updated_at", "2016-02-22 08:09:21.789595"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 54]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'vivien@langworth.biz' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'vivien@langworth.biz' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$dQ0V3gFfnnkuTyvg6HZSFe/U52jf8CsODI6oECZQ93X0VqAZe2YlG"], ["email", "vivien@langworth.biz"], ["full_name", "Mariano Rohan"], ["created_at", "2016-02-22 08:10:13.986864"], ["updated_at", "2016-02-22 08:10:13.986864"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'leora.watsica@pacochaconsidine.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'leora.watsica@pacochaconsidine.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$Q4hP89ULIdzqNcHALrD37uMeATtUJeNB1adnP/WNpcRINpb5PuSuq"], ["email", "leora.watsica@pacochaconsidine.com"], ["full_name", "Otto Renner"], ["created_at", "2016-02-22 08:10:13.992694"], ["updated_at", "2016-02-22 08:10:13.992694"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 56], ["follower_id", 55], ["created_at", "2016-02-22 08:10:14.040188"], ["updated_at", "2016-02-22 08:10:14.040188"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by RelationshipsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 55]]
+  Rendered relationships/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 127ms (Views: 55.6ms | ActiveRecord: 0.3ms)
+  [1m[36mRelationship Load (0.4ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 55]]
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'heath@kuhic.org' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'heath@kuhic.org' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$HF68KLJr9.wMuftZW4sOxuIS6SraS1tw5MzcoQP4nXhXkOXn1gYLK"], ["email", "heath@kuhic.org"], ["full_name", "Miss Abbie Hoppe"], ["created_at", "2016-02-22 08:10:14.245789"], ["updated_at", "2016-02-22 08:10:14.245789"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'willis@hackett.info' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'willis@hackett.info' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$ihGzP0zDQheo5z.QOh6A4eBa0DNGa9NtzO.M74C/Fgr1WUOvp7.LG"], ["email", "willis@hackett.info"], ["full_name", "Brisa Kassulke"], ["created_at", "2016-02-22 08:10:14.251583"], ["updated_at", "2016-02-22 08:10:14.251583"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by RelationshipsController#create as HTML
+  Parameters: {"leader_id"=>"58"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 58]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 57]]
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1  [["follower_id", 57]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 57]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leader_id", 58], ["follower_id", 57], ["created_at", "2016-02-22 08:10:14.258116"], ["updated_at", "2016-02-22 08:10:14.258116"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/following
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1  ORDER BY "relationships"."id" ASC LIMIT 1[0m  [["follower_id", 57]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 58]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'neil_gleichner@larkin.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'neil_gleichner@larkin.org' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$W4rjVj81mlJK3/GVvWRA3.SejkhNhj8aT.kztO6G9xaMLjMmb5WrW"], ["email", "neil_gleichner@larkin.org"], ["full_name", "Mohammad Kutch IV"], ["created_at", "2016-02-22 08:10:14.269196"], ["updated_at", "2016-02-22 08:10:14.269196"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'megane_heel@keeblergusikowski.name' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'megane_heel@keeblergusikowski.name' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$skCW660jVxAPQF0k.pC9JeY7G1XoALgSo/WeOVROtsgwCytO9XY/m"], ["email", "megane_heel@keeblergusikowski.name"], ["full_name", "Anjali Nienow DDS"], ["created_at", "2016-02-22 08:10:14.274226"], ["updated_at", "2016-02-22 08:10:14.274226"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RelationshipsController#create as HTML
+  Parameters: {"leader_id"=>"60"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 60]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 59]]
+  [1m[36mRelationship Load (0.3ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 59]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 59]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 60], ["follower_id", 59], ["created_at", "2016-02-22 08:10:14.282660"], ["updated_at", "2016-02-22 08:10:14.282660"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/following
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'fatima.jerde@towne.biz' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'fatima.jerde@towne.biz' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$z02WrqueEzF18Z0rz5Jqa.app.b530noR0/l9XwuK0JbtEyQATsQy"], ["email", "fatima.jerde@towne.biz"], ["full_name", "Julius Bayer II"], ["created_at", "2016-02-22 08:10:14.291491"], ["updated_at", "2016-02-22 08:10:14.291491"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'andrew@hackett.info' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'andrew@hackett.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$HhJX4ZnydenryQm7ZxsCW.ssgytJAvVHgO1KiBojHP4VWdrUFxFZ6"], ["email", "andrew@hackett.info"], ["full_name", "Alexzander Ruecker"], ["created_at", "2016-02-22 08:10:14.296643"], ["updated_at", "2016-02-22 08:10:14.296643"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leader_id", 62], ["follower_id", 61], ["created_at", "2016-02-22 08:10:14.299206"], ["updated_at", "2016-02-22 08:10:14.299206"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RelationshipsController#create as HTML
+  Parameters: {"leader_id"=>"62"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 62]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 61]]
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 61]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 62]]
+Redirected to http://test.host/following
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "relationships"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'rosario@schaefer.org' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'rosario@schaefer.org' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$AADX6l2kZXxcJmjpNP0vk.Gdih.aE2HdC08K7FdoCt2Lx84GEMEva"], ["email", "rosario@schaefer.org"], ["full_name", "Miss Princess Heathcote"], ["created_at", "2016-02-22 08:13:27.408031"], ["updated_at", "2016-02-22 08:13:27.408031"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'kali.oconnell@macgyver.info' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'kali.oconnell@macgyver.info' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$wuCU/J0/bfSER2x7QJsbs.vnmZasOiituCt0iGqDS/J/FqztrpJsC"], ["email", "kali.oconnell@macgyver.info"], ["full_name", "Taryn Boyer"], ["created_at", "2016-02-22 08:13:27.414731"], ["updated_at", "2016-02-22 08:13:27.414731"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 64], ["follower_id", 63], ["created_at", "2016-02-22 08:13:27.470853"], ["updated_at", "2016-02-22 08:13:27.470853"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by RelationshipsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 63]]
+  Rendered relationships/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 159ms (Views: 91.0ms | ActiveRecord: 0.3ms)
+  [1m[36mRelationship Load (0.3ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 63]]
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'amina@schmeler.biz' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'amina@schmeler.biz' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$ap0ljnLcNo/vOkuZm2eQOu4Oj4iYuxoQZsw2.KrOpWv.7uDDlAdIK"], ["email", "amina@schmeler.biz"], ["full_name", "Ms. Keaton Treutel"], ["created_at", "2016-02-22 08:13:27.666746"], ["updated_at", "2016-02-22 08:13:27.666746"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'rafael.berge@bahringer.info' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'rafael.berge@bahringer.info' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$AclOgw3qtB4Yci88CDVM/OjjWA6aFNFCgpJT9lyxidaTCNa7IaExO"], ["email", "rafael.berge@bahringer.info"], ["full_name", "Billy Hauck"], ["created_at", "2016-02-22 08:13:27.671806"], ["updated_at", "2016-02-22 08:13:27.671806"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by RelationshipsController#create as HTML
+  Parameters: {"leader_id"=>"66"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 66]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 65]]
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1  [["follower_id", 65]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 65]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 65]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 66], ["follower_id", 65], ["created_at", "2016-02-22 08:13:27.677797"], ["updated_at", "2016-02-22 08:13:27.677797"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/following
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1  ORDER BY "relationships"."id" ASC LIMIT 1  [["follower_id", 65]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 66]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'adelia.oconner@dare.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'adelia.oconner@dare.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$YbLWxeGVmwSjHIDw0qnBnu.eZbxrnE3OIV/mtpkdsdYAKAh2mmDIq"], ["email", "adelia.oconner@dare.com"], ["full_name", "Mr. Margie Thompson"], ["created_at", "2016-02-22 08:13:27.689194"], ["updated_at", "2016-02-22 08:13:27.689194"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'zoey@jones.biz' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'zoey@jones.biz' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$JbO7ebcMfLzg3je4bnCkbux6JcxviZxzO88GKlKPfyNATd8MqO4I."], ["email", "zoey@jones.biz"], ["full_name", "Darion Hudson IV"], ["created_at", "2016-02-22 08:13:27.695371"], ["updated_at", "2016-02-22 08:13:27.695371"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by RelationshipsController#create as HTML
+  Parameters: {"leader_id"=>"68"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 68]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 67]]
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1  [["follower_id", 67]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 67]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 67]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leader_id", 68], ["follower_id", 67], ["created_at", "2016-02-22 08:13:27.702693"], ["updated_at", "2016-02-22 08:13:27.702693"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/following
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'maya_lindgren@morar.org' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'maya_lindgren@morar.org' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$kuL68AbSZd1qcUvizZ.SJOGIzOQaVCaZMVMSELZwFbuJ3XE28R6lG"], ["email", "maya_lindgren@morar.org"], ["full_name", "Mathias Mitchell"], ["created_at", "2016-02-22 08:13:27.711976"], ["updated_at", "2016-02-22 08:13:27.711976"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joesph@hilpert.name' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joesph@hilpert.name' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$1BIyMHuERZsrcVdxiSomIOINoB.hVPpA3Ta1TybhICCFUvbGJpPbG"], ["email", "joesph@hilpert.name"], ["full_name", "Emil Goldner"], ["created_at", "2016-02-22 08:13:27.716940"], ["updated_at", "2016-02-22 08:13:27.716940"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "relationships" ("leader_id", "follower_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leader_id", 70], ["follower_id", 69], ["created_at", "2016-02-22 08:13:27.719034"], ["updated_at", "2016-02-22 08:13:27.719034"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RelationshipsController#create as HTML
+  Parameters: {"leader_id"=>"70"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 70]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 69]]
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 69]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 70]]
+Redirected to http://test.host/following
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "relationships"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'rashawn.prohaska@mraz.co' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'rashawn.prohaska@mraz.co' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$04$qmtW8FI6swXCsupIXLJfCeaDvBQpTU4zrygK3BwFGk.Hns9JDscBa"], ["email", "rashawn.prohaska@mraz.co"], ["full_name", "Ms. Domenick Abbott"], ["created_at", "2016-02-22 08:13:27.731840"], ["updated_at", "2016-02-22 08:13:27.731840"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by RelationshipsController#create as HTML
+  Parameters: {"leader_id"=>"71"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 71]]
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 71]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 71]]
+Redirected to http://test.host/following
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "relationships"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK

@@ -1,0 +1,30 @@
+<%= render 'shared/header', header: "Profile: #{@user.full_name}" %>
+
+<h5><%= @user.full_name %>'s Activity</h5>
+
+<ul class='nav nav-tabs'>
+  <li class='<%= 'active' if params[:tab].nil? %>'>
+    <%= link_to "Pubs (#{@user.pubs.size})", user_path(@user) %>
+  </li>
+  <li class='<%= 'active' if params[:tab] == 'reviews' %>'>
+    <%= link_to "Reviews (#{@user.reviews.size})", user_path(@user, tab: 'reviews') %>
+  </li>
+</ul>
+
+<% if params[:tab].nil? %>
+  <% @user.pubs.each do |pub| %>
+    <li>
+      <%= link_to pub.title, pub %>
+      <p>posted by <%= link_to pub.user.full_name, pub.user %>. <%= link_to "PDF", fix_url(pub.url) %></p>
+    </li>
+  <% end %>
+<% elsif params[:tab] == 'reviews' %>
+  <% @user.reviews.each do |review| %>
+    <div class="well span8">
+      <em>"<%= review.body %>"</em>
+      on <%= link_to review.pub.title, pub_path(review.pub) %>
+      <br/>
+      <span class='quiet'>by </span><%= link_to review.user.full_name, review.user %>
+    </div>
+  <% end %>
+<% end %>

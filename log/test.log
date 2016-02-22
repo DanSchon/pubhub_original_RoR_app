@@ -11776,3 +11776,28 @@ Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms)
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (62.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (56.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'hildegard@kemmerkeeling.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'hildegard@kemmerkeeling.com' LIMIT 1[0m
+  [1m[35mSQL (11.8ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$/vBPeuZ7jyEjEAyKAhT.xOKwgv6fx.LDAf6AZQBMLA9XI1He9Dom2"], ["email", "hildegard@kemmerkeeling.com"], ["full_name", "Kaylin Leuschke"], ["created_at", "2016-02-22 05:38:59.866207"], ["updated_at", "2016-02-22 05:38:59.866207"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"161"}
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'garrick_fritsch@cainsmitham.co' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'garrick_fritsch@cainsmitham.co' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$38KXhHUiLyZbp/x/NRhlue52h9VLyY766aRt./oztfPTyrfLZsCgW"], ["email", "garrick_fritsch@cainsmitham.co"], ["full_name", "Else Okuneva"], ["created_at", "2016-02-22 05:39:48.896946"], ["updated_at", "2016-02-22 05:39:48.896946"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"162"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 162]]
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 110ms (Views: 50.8ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m

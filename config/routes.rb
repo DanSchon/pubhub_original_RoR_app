@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/home', to: "pubs#index"
   get '/sign_out', to: "sessions#destroy"
 
-  resources :users, only: [:create]
+  resources :users, only: [:show, :create]
   resources :sessions, only: [:create]
   resources :pubs, only: [:new, :create, :show] do 
     resources :reviews, only: [:create]

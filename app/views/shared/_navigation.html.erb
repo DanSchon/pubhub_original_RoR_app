@@ -13,8 +13,8 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><%= link_to "Home", home_path %></li>
-          <li><%= link_to "Profile" %></li>
-          <li><%= link_to "Scientists" %></li>
+          <li><%= link_to "Profile", current_user %></li>
+          <li><%= link_to "Following", following_path %></li>
           <li><%= link_to "Upload a Pub!", new_pub_path %></li>
         </ul>
         <%= form_tag 'search_publications_path', class: "navbar-form navbar-left" do %>

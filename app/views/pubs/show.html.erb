@@ -2,7 +2,7 @@
 <p>
   <%= @pub.content %>
 </p>
-<p>posted by <%= link_to @pub.user.full_name, "pub.user" %>. <%= link_to "PDF", fix_url(@pub.url) %>
+<p>posted by <%= link_to @pub.user.full_name, @pub.user %>. <%= link_to "PDF", fix_url(@pub.url) %>
 </p>
 <hr/>
 
@@ -23,6 +23,6 @@
   <div class="well span8">
     <em>"<%= review.body %>"</em>
     <br/>
-    <span class='quiet'>by </span><%= review.user.full_name %>
+    <span class='quiet'>by </span><%= link_to review.user.full_name, review.user %>
   </div>
 <% end %>

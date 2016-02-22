@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/sign_in', to: "sessions#new"
   get '/home', to: "pubs#index"
   get '/sign_out', to: "sessions#destroy"
+  get '/following', to: "relationships#index"
 
   resources :users, only: [:show, :create]
   resources :sessions, only: [:create]

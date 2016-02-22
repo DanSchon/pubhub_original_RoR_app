@@ -1,0 +1,34 @@
+<container>
+  <header>
+    <h2>Researchers I follow:</h2>
+  </header>
+  <hr>
+  <table class="table">
+    <thead>
+      <tr>
+        <th width="30%"></th>
+        <th width="20%">Publications</th>
+        <th width="20%">Reviews</th>
+        <th width="30%">Followers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @relationships.each do |relationship| %>
+        <tr>
+          <td>
+            <%= link_to relationship.leader.full_name, relationship.leader %>
+          </td>
+          <td >
+            <%= relationship.leader.pubs.count %>
+          </td>
+          <td>
+            <%= relationship.leader.reviews.count %>
+          </td>
+          <td>
+            <%= relationship.leader.leading_relationships.count %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</container>

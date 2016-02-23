@@ -17458,3 +17458,304 @@ Processing by PubsController#index as HTML
   Rendered shared/_navigation.html.erb (3.1ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 51ms (Views: 49.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-02-23 02:46:27 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#front as HTML
+  [1m[35mUser Load (16.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 158ms (ActiveRecord: 51.1ms)
+
+
+Started GET "/" for ::1 at 2016-02-23 02:46:28 -0800
+Processing by PagesController#front as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/home" for ::1 at 2016-02-23 02:46:28 -0800
+Processing by PubsController#index as HTML
+  Rendered shared/_header.html.erb (0.6ms)
+  [1m[35mPub Load (15.9ms)[0m  SELECT "pubs".* FROM "pubs"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered pubs/index.html.erb within layouts/application (66.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered shared/_navigation.html.erb (4.8ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 1034ms (Views: 996.9ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/" for ::1 at 2016-02-23 02:46:33 -0800
+Processing by PagesController#front as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/home" for ::1 at 2016-02-23 02:46:33 -0800
+Processing by PubsController#index as HTML
+  Rendered shared/_header.html.erb (0.3ms)
+  [1m[35mPub Load (0.3ms)[0m  SELECT "pubs".* FROM "pubs"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered pubs/index.html.erb within layouts/application (4.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered shared/_navigation.html.erb (3.9ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 58ms (Views: 56.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/home" for ::1 at 2016-02-23 02:46:35 -0800
+Processing by PubsController#index as HTML
+  Rendered shared/_header.html.erb (0.1ms)
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered pubs/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered shared/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 119ms (Views: 117.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/sign_out" for ::1 at 2016-02-23 03:15:26 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 72ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-23 03:15:26 -0800
+Processing by PagesController#front as HTML
+  Rendered pages/front.html.erb within layouts/application (2.0ms)
+  Rendered shared/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 1064ms (Views: 1062.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for ::1 at 2016-02-23 03:15:32 -0800
+Processing by UsersController#new as HTML
+  Rendered shared/_header.html.erb (1.1ms)
+  Rendered users/new.html.erb within layouts/application (586.8ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 656ms (Views: 639.0ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users" for ::1 at 2016-02-23 03:15:57 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wV5Hob03Fudz1zIOpuGf+OvTzu4/gA1HWI8IfXPb1wdHYbTM3mzMt4Zq2TH4Su+09vhQyPhAnHN/ApbAA2PQiw==", "user"=>{"full_name"=>"Daniel Schonfs", "email"=>"danyschonfeld@hotmail.com", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (24.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'danyschonfeld@hotmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered shared/_header.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (12.9ms)
+  Rendered shared/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 257ms (Views: 68.2ms | ActiveRecord: 25.0ms)
+
+
+Started POST "/users" for ::1 at 2016-02-23 03:16:02 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+IbNsaXDf0zJS3wIGOmaHIseVyJ5HV85ppTQdSwSciB+uT7cxpilHDz2lzdGQupQljXJBL7dzg2BGU7IXKp1rA==", "user"=>{"full_name"=>"Daniel Schonfs", "email"=>"danyschonfeld@hotmail.com", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'danyschonfeld@hotmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered shared/_header.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 135ms (Views: 49.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for ::1 at 2016-02-23 03:16:15 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NysqBPYrZWNhhCSvE8oQd/6g3iHq/YNEOUwgC99sC1exFNlplXC/M5Q5z5BNYWA744tABy09EnAewb62r9QM2w==", "user"=>{"full_name"=>"Daniel Schonfs", "email"=>"danyschonfeld@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'danyschonfeld@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (51.1ms)[0m  INSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["full_name", "Daniel Schonfs"], ["email", "danyschonfeld@gmail.com"], ["password_digest", "$2a$10$tmctta56V1Q4M30sT0xCUu9Wgp5blE6T8ZjUUXk4kyUc3/5oZomcm"], ["created_at", "2016-02-23 11:16:15.910963"], ["updated_at", "2016-02-23 11:16:15.910963"]]
+  [1m[36m (37.1ms)[0m  [1mCOMMIT[0m
+  Rendered app_mailer/send_welcome_email.html.erb (0.4ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 296.0ms
+
+Sent mail to danyschonfeld@gmail.com (38.9ms)
+Date: Tue, 23 Feb 2016 03:16:16 -0800
+From: info@pubhub.com
+To: danyschonfeld@gmail.com
+Message-ID: <56cc3f806dbd2_13a833fcfeb13a880743e6@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}</p>
+  </body>  
+<html>
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 657ms (ActiveRecord: 88.8ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-02-23 03:16:16 -0800
+Processing by SessionsController#new as HTML
+  Rendered shared/_header.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (15.4ms)
+  Rendered shared/_navigation.html.erb (0.3ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+Completed 200 OK in 216ms (Views: 215.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-02-23 03:21:07 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NysqBPYrZWNhhCSvE8oQd/6g3iHq/YNEOUwgC99sC1exFNlplXC/M5Q5z5BNYWA744tABy09EnAewb62r9QM2w==", "user"=>{"full_name"=>"Daniel Schonfs", "email"=>"danyschonfeld@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'danyschonfeld@gmail.com' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  Rendered shared/_header.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (27.1ms)
+  Rendered shared/_navigation.html.erb (1.2ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 1765ms (Views: 1010.0ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/users" for ::1 at 2016-02-23 03:21:24 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fqZ5b+g64DuFOO97JRhp04fON2KjO7ymBVA9DAl08Rn4mYoCi2E6a3CFBER7sxmfmuWpRGT7LZIi3aOxecz2lQ==", "user"=>{"full_name"=>"Daniel Schonfs", "email"=>"d@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'd@gmail.com' LIMIT 1
+  [1m[36mSQL (13.0ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "Daniel Schonfs"], ["email", "d@gmail.com"], ["password_digest", "$2a$10$t9LL8UesqFbXf2153OzltOpWNv.dgg9cHWVMhrF2ES3K6YfB1KdOu"], ["created_at", "2016-02-23 11:21:24.328659"], ["updated_at", "2016-02-23 11:21:24.328659"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  Rendered app_mailer/send_welcome_email.html.erb (0.3ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 265.6ms
+
+Sent mail to d@gmail.com (41.5ms)
+Date: Tue, 23 Feb 2016 03:21:24 -0800
+From: info@pubhub.com
+To: d@gmail.com
+Message-ID: <56cc40b4a0a59_13ae13fd9aa22bc581968@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}</p>
+  </body>  
+<html>
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 448ms (ActiveRecord: 14.2ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-02-23 03:21:24 -0800
+Processing by SessionsController#new as HTML
+  Rendered shared/_header.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 100ms (Views: 99.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-02-23 03:22:50 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fqZ5b+g64DuFOO97JRhp04fON2KjO7ymBVA9DAl08Rn4mYoCi2E6a3CFBER7sxmfmuWpRGT7LZIi3aOxecz2lQ==", "user"=>{"full_name"=>"Daniel Schonfs", "email"=>"d@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'd@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered shared/_header.html.erb (0.2ms)
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 185ms (Views: 102.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for ::1 at 2016-02-23 03:22:59 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TMJFua7wh4Vo0uKbP44DN/ToCbcpvlPkVB6dMqtyyprK/bbUzatd1Z1vCaRhJXN76cOXke5+wtBzkwOP28rNFg==", "user"=>{"full_name"=>"Daniel Schonfs", "email"=>"g@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'g@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["full_name", "Daniel Schonfs"], ["email", "g@gmail.com"], ["password_digest", "$2a$10$4ViRjQQKBtD5x/YfZn0KOuaKVEvBD2xBEt5yzrzVWPPHiqHeyHBZ2"], ["created_at", "2016-02-23 11:22:59.859077"], ["updated_at", "2016-02-23 11:22:59.859077"]]
+  [1m[36m (16.4ms)[0m  [1mCOMMIT[0m
+  Rendered app_mailer/send_welcome_email.html.erb (0.6ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 63.3ms
+
+Sent mail to g@gmail.com (22.1ms)
+Date: Tue, 23 Feb 2016 03:22:59 -0800
+From: info@pubhub.com
+To: g@gmail.com
+Message-ID: <56cc4113e6611_13ae13fd9aa227c84197ec@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, Daniel Schonfs</p>
+  </body>  
+<html>
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 189ms (ActiveRecord: 17.1ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-02-23 03:22:59 -0800
+Processing by SessionsController#new as HTML
+  Rendered shared/_header.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 197ms (Views: 195.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-02-23 03:23:37 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TMJFua7wh4Vo0uKbP44DN/ToCbcpvlPkVB6dMqtyyprK/bbUzatd1Z1vCaRhJXN76cOXke5+wtBzkwOP28rNFg==", "user"=>{"full_name"=>"Daniel Schonfs", "email"=>"i@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'i@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["full_name", "Daniel Schonfs"], ["email", "i@gmail.com"], ["password_digest", "$2a$10$/HUBvG7IbM01tH65ozNK5OkaGSoJ7PxpAPsNxOJevJOmJO.7tKQLO"], ["created_at", "2016-02-23 11:23:37.199714"], ["updated_at", "2016-02-23 11:23:37.199714"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered app_mailer/send_welcome_email.html.erb (0.5ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 86.5ms
+
+Sent mail to i@gmail.com (12.2ms)
+Date: Tue, 23 Feb 2016 03:23:37 -0800
+From: info@pubhub.com
+To: i@gmail.com
+Message-ID: <56cc413946f84_13ae13fd9ad1fd65c19835@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, Daniel Schonfs.</p>
+  </body>  
+<html>
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 190ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/sign_in" for ::1 at 2016-02-23 03:23:37 -0800
+Processing by SessionsController#new as HTML
+  Rendered shared/_header.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  Rendered shared/_navigation.html.erb (0.2ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 88ms (Views: 86.8ms | ActiveRecord: 0.0ms)

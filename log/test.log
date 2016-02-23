@@ -12631,3 +12631,503 @@ Redirected to http://test.host/following
 Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
   [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "relationships"[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (16.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (15.7ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "full_name"=>"John Smith"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (17.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36mSQL (64.8ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "John Smith"], ["email", "john@email.com"], ["password_digest", "$2a$04$DkbnmFh1Y4zb0A5woBoNhOioJXxpGqheRDXv629xvFd9CN2sZ4lYO"], ["created_at", "2016-02-23 11:03:48.970317"], ["updated_at", "2016-02-23 11:03:48.970317"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered app_mailer/send_welcome_email.html.erb (1.6ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 320.6ms
+
+Sent mail to john@email.com (23.4ms)
+Date: Tue, 23 Feb 2016 03:03:49 -0800
+From: info@pubhub.com
+To: john@email.com
+Message-ID: <56cc3c956d1c1_139be3fcc4505e6cc161a@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}
+  </body>  
+<html>
+Redirected to http://test.host/sign_in
+Completed 302 Found in 586ms (ActiveRecord: 85.4ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "full_name"=>"John Smith"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "John Smith"], ["email", "john@email.com"], ["password_digest", "$2a$04$0tBxn3t9QEiAbOWGBmwgTe4SaDeY5p.BTO0UpmiR2sq/xVl7bmWzC"], ["created_at", "2016-02-23 11:03:49.476487"], ["updated_at", "2016-02-23 11:03:49.476487"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered app_mailer/send_welcome_email.html.erb (0.1ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 1.4ms
+
+Sent mail to john@email.com (2.1ms)
+Date: Tue, 23 Feb 2016 03:03:49 -0800
+From: info@pubhub.com
+To: john@email.com
+Message-ID: <56cc3c9575773_139be3fcc4505e6cc17b5@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}
+  </body>  
+<html>
+Redirected to http://test.host/sign_in
+Completed 302 Found in 10ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36m (14.7ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 578ms (Views: 55.5ms | ActiveRecord: 15.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "full_name"=>"John Smith"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "John Smith"], ["email", "john@email.com"], ["password_digest", "$2a$04$taoEYx3puBAEMCT8v92cbuiy6//pvmUTx8htY5ayjBYRYmtmkKMMW"], ["created_at", "2016-02-23 11:05:02.017066"], ["updated_at", "2016-02-23 11:05:02.017066"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered app_mailer/send_welcome_email.html.erb (1.0ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 327.9ms
+
+Sent mail to john@email.com (20.8ms)
+Date: Tue, 23 Feb 2016 03:05:02 -0800
+From: info@pubhub.com
+To: john@email.com
+Message-ID: <56cc3cde5b2fa_139d33ff66945e6d4264bf@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}
+  </body>  
+<html>
+Redirected to http://test.host/sign_in
+Completed 302 Found in 387ms (ActiveRecord: 3.9ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "full_name"=>"John Smith"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "John Smith"], ["email", "john@email.com"], ["password_digest", "$2a$04$hH5zB97tKL7QraQZ.UchJe4NdVGxu9lc5Nln8vfTuwsPH938i/ADa"], ["created_at", "2016-02-23 11:05:02.402474"], ["updated_at", "2016-02-23 11:05:02.402474"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered app_mailer/send_welcome_email.html.erb (0.1ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 1.3ms
+
+Sent mail to john@email.com (1.9ms)
+Date: Tue, 23 Feb 2016 03:05:02 -0800
+From: info@pubhub.com
+To: john@email.com
+Message-ID: <56cc3cde63414_139d33ff66945e6d426586@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}
+  </body>  
+<html>
+Redirected to http://test.host/sign_in
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 577ms (Views: 25.7ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "full_name"=>"John Smith"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "John Smith"], ["email", "john@email.com"], ["password_digest", "$2a$04$PtfyOA0JW/OPQzWQ1QRAKOzTuxHpJqLpsbqgrZl3zH6Tmu8Q.XBM."], ["created_at", "2016-02-23 11:09:33.482959"], ["updated_at", "2016-02-23 11:09:33.482959"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered app_mailer/send_welcome_email.html.erb (1.7ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 486.5ms
+
+Sent mail to john@email.com (14.4ms)
+Date: Tue, 23 Feb 2016 03:09:34 -0800
+From: info@pubhub.com
+To: john@email.com
+Message-ID: <56cc3dee7de5_13a173fdee584c6d89339f@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}
+  </body>  
+<html>
+Redirected to http://test.host/sign_in
+Completed 302 Found in 649ms (ActiveRecord: 4.7ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "full_name"=>"John Smith"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "John Smith"], ["email", "john@email.com"], ["password_digest", "$2a$04$8Ooyyo7gN0DV9rDicplWZOP5kZ.V07BKYcr2IRLZ6h54Gn/BBCgZC"], ["created_at", "2016-02-23 11:09:34.061078"], ["updated_at", "2016-02-23 11:09:34.061078"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered app_mailer/send_welcome_email.html.erb (0.1ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 1.3ms
+
+Sent mail to john@email.com (1.9ms)
+Date: Tue, 23 Feb 2016 03:09:34 -0800
+From: info@pubhub.com
+To: john@email.com
+Message-ID: <56cc3deefe83_13a173fdee584c6d8934a2@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}
+  </body>  
+<html>
+Redirected to http://test.host/sign_in
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 555ms (Views: 59.0ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "full_name"=>"John Smith"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "John Smith"], ["email", "john@email.com"], ["password_digest", "$2a$04$AK6Tf1pLyzUZquyGts7tyeXexlzLoGpRH7sCA3N4ifZDgjuZDeGXW"], ["created_at", "2016-02-23 11:12:37.381510"], ["updated_at", "2016-02-23 11:12:37.381510"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered app_mailer/send_welcome_email.html.erb (1.7ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 337.3ms
+
+Sent mail to john@email.com (19.5ms)
+Date: Tue, 23 Feb 2016 03:12:37 -0800
+From: info@pubhub.com
+To: john@email.com
+Message-ID: <56cc3ea5b7df8_13a4e3ffd14c5e6d498866@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}</p>
+  </body>  
+<html>
+Redirected to http://test.host/sign_in
+Completed 302 Found in 453ms (ActiveRecord: 4.3ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "full_name"=>"John Smith"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "John Smith"], ["email", "john@email.com"], ["password_digest", "$2a$04$EgGZucJZifJB6gGq1xNZVefLlnJOp/5TrVzMl80noKVBnEbei07f."], ["created_at", "2016-02-23 11:12:37.781702"], ["updated_at", "2016-02-23 11:12:37.781702"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered app_mailer/send_welcome_email.html.erb (0.1ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 1.2ms
+
+Sent mail to john@email.com (1.8ms)
+Date: Tue, 23 Feb 2016 03:12:37 -0800
+From: info@pubhub.com
+To: john@email.com
+Message-ID: <56cc3ea5bfec2_13a4e3ffd14c5e6d4989de@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}</p>
+  </body>  
+<html>
+Redirected to http://test.host/sign_in
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 544ms (Views: 59.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "full_name"=>"John Smith"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "John Smith"], ["email", "john@email.com"], ["password_digest", "$2a$04$wluJ9pMjS/0Odgszotm.UedIFjbd6sIIvYcXmbkp24xNhxIkwYxQm"], ["created_at", "2016-02-23 11:13:05.377365"], ["updated_at", "2016-02-23 11:13:05.377365"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered app_mailer/send_welcome_email.html.erb (1.0ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 360.3ms
+
+Sent mail to john@email.com (19.5ms)
+Date: Tue, 23 Feb 2016 03:13:05 -0800
+From: info@pubhub.com
+To: john@email.com
+Message-ID: <56cc3ec1bb015_13a593feffd05e6dc5981f@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}</p>
+  </body>  
+<html>
+Redirected to http://test.host/sign_in
+Completed 302 Found in 419ms (ActiveRecord: 4.2ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "full_name"=>"John Smith"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "John Smith"], ["email", "john@email.com"], ["password_digest", "$2a$04$/zCy.2XfRRS7xDXEMGX/NOBCYhAn5mZtXiPv0BLnlxr9Ii0z/SDJK"], ["created_at", "2016-02-23 11:13:05.794172"], ["updated_at", "2016-02-23 11:13:05.794172"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered app_mailer/send_welcome_email.html.erb (0.1ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 1.4ms
+
+Sent mail to john@email.com (2.1ms)
+Date: Tue, 23 Feb 2016 03:13:05 -0800
+From: info@pubhub.com
+To: john@email.com
+Message-ID: <56cc3ec1c2ef8_13a593feffd05e6dc599a5@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}</p>
+  </body>  
+<html>
+Redirected to http://test.host/sign_in
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 700ms (Views: 25.9ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "full_name"=>"John Smith"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "John Smith"], ["email", "john@email.com"], ["password_digest", "$2a$04$S0CEzC4GtHgblN1pyKQ3ZuNqDbgPjf5fN032Aks6HwucWCfOGk1GK"], ["created_at", "2016-02-23 11:13:44.033393"], ["updated_at", "2016-02-23 11:13:44.033393"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered app_mailer/send_welcome_email.html.erb (1.0ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 312.0ms
+
+Sent mail to john@email.com (13.7ms)
+Date: Tue, 23 Feb 2016 03:13:44 -0800
+From: info@pubhub.com
+To: john@email.com
+Message-ID: <56cc3ee859cd1_13a663fdefc85e6dc329e5@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}</p>
+  </body>  
+<html>
+Redirected to http://test.host/sign_in
+Completed 302 Found in 366ms (ActiveRecord: 4.1ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "full_name"=>"John Smith"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "John Smith"], ["email", "john@email.com"], ["password_digest", "$2a$04$0N6ju2Izb0Sku9kplyRVE.XK0bz1x05EIS5xYCSXibcKREqFww2/q"], ["created_at", "2016-02-23 11:13:44.396401"], ["updated_at", "2016-02-23 11:13:44.396401"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered app_mailer/send_welcome_email.html.erb (0.1ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 1.4ms
+
+Sent mail to john@email.com (2.1ms)
+Date: Tue, 23 Feb 2016 03:13:44 -0800
+From: info@pubhub.com
+To: john@email.com
+Message-ID: <56cc3ee861d17_13a663fdefc85e6dc33097@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}</p>
+  </body>  
+<html>
+Redirected to http://test.host/sign_in
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 563ms (Views: 36.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "full_name"=>"John Smith"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (2.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "John Smith"], ["email", "john@email.com"], ["password_digest", "$2a$04$Jw9aat8bUBi6myZh0Hv/fO9is2l0mmnaYLuby6addZo18hv6CER/u"], ["created_at", "2016-02-23 11:14:29.844794"], ["updated_at", "2016-02-23 11:14:29.844794"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered app_mailer/send_welcome_email.html.erb (1.0ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 238.4ms
+
+Sent mail to john@email.com (5.1ms)
+Date: Tue, 23 Feb 2016 03:14:30 -0800
+From: info@pubhub.com
+To: john@email.com
+Message-ID: <56cc3f161783a_13a773fe2bd85e6cc2318@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}</p>
+  </body>  
+<html>
+Redirected to http://test.host/sign_in
+Completed 302 Found in 283ms (ActiveRecord: 5.7ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com", "password"=>"[FILTERED]", "full_name"=>"John Smith"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("full_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "John Smith"], ["email", "john@email.com"], ["password_digest", "$2a$04$2wkqXoQcOmFnUNKFx8opZ..ek5H/BUOgSZPAHhcCTosTTKF8dFQ5G"], ["created_at", "2016-02-23 11:14:30.107045"], ["updated_at", "2016-02-23 11:14:30.107045"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered app_mailer/send_welcome_email.html.erb (0.1ms)
+
+AppMailer#send_welcome_email: processed outbound mail in 1.9ms
+
+Sent mail to john@email.com (2.1ms)
+Date: Tue, 23 Feb 2016 03:14:30 -0800
+From: info@pubhub.com
+To: john@email.com
+Message-ID: <56cc3f161b68c_13a773fe2bd85e6cc24e8@MacBook-Pro.local.mail>
+Subject: Welcome to PubHub!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html lang="en-US">
+  <body>
+    <p>Welcome to PubHub, #{@user.full_name}</p>
+  </body>  
+<html>
+Redirected to http://test.host/sign_in
+Completed 302 Found in 11ms (ActiveRecord: 0.9ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@email.com"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'john@email.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 577ms (Views: 59.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK

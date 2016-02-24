@@ -21,7 +21,14 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit "Register", class: "btn btn-default" %>
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key=pk_test_4WPD5PCYjV8zjMVqrkuF4Odf
+        data-name="PubHub Sign up charge"
+        data-description="$5.00 to sign up for the app"
+        data-amount="500"
+        data-locale="auto">
+      </script>
     </div>
   </div>
 <% end %>

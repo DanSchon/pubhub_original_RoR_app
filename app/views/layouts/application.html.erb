@@ -9,9 +9,13 @@
 <body>
 <%= render 'shared/navigation' %>
 <%= render 'layouts/messages' %>
+<% if current_page?(root_path) %>
+  <div class="landing">
+<% else %>
   <div class="container">
     <div class="row">
       <div class="span12">
+<% end %>
         <%= yield %>
       </div>
     </div>

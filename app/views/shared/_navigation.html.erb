@@ -17,7 +17,7 @@
           <li><%= link_to "Following", following_path %></li>
           <li><%= link_to "Upload a Pub!", new_pub_path %></li>
         </ul>
-        <%= form_tag 'search_publications_path', class: "navbar-form navbar-left" do %>
+        <%= form_tag search_pubs_path, class: "navbar-form navbar-left" do %>
           <input class="form-control" name="search_term" type="text" placeholder="Search pubs by title">
           <button class="btn btn-default" type="submit"> Search </button>
         <% end %>

@@ -13131,3 +13131,672 @@ Processing by UsersController#create as HTML
   Rendered users/new.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 577ms (Views: 59.1ms | ActiveRecord: 0.6ms)
   [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (16.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (36.5ms)[0m  BEGIN
+  [1m[36mPub Exists (31.9ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (11.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Load (0.4ms)[0m  SELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (29.9ms)[0m  INSERT INTO "pubs" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-29 08:14:06.911599"], ["updated_at", "2016-02-29 08:14:06.911599"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "pubs" SET "title" = $1, "updated_at" = $2 WHERE "pubs"."id" = $3[0m  [["title", "an arbitrary value"], ["updated_at", "2016-02-29 08:14:06.944573"], ["id", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:14:07.097522"], ["updated_at", "2016-02-29 08:14:07.097522"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:14:07.101273"], ["updated_at", "2016-02-29 08:14:07.101273"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Load (47.9ms)[0m  [1mSELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%gravity%')  ORDER BY created_at DESC[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:14:07.172129"], ["updated_at", "2016-02-29 08:14:07.172129"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:14:07.175164"], ["updated_at", "2016-02-29 08:14:07.175164"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:14:07.179908"], ["updated_at", "2016-02-29 08:14:07.179908"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:14:07.182521"], ["updated_at", "2016-02-29 08:14:07.182521"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:14:07.186709"], ["updated_at", "2016-02-29 08:14:07.186709"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:14:07.189160"], ["updated_at", "2016-02-29 08:14:07.189160"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:14:07.193334"], ["updated_at", "2016-02-29 08:14:07.193334"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:14:07.195736"], ["updated_at", "2016-02-29 08:14:07.195736"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Load (0.5ms)[0m  SELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-29 08:15:20.522822"], ["updated_at", "2016-02-29 08:15:20.522822"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "pubs" SET "title" = $1, "updated_at" = $2 WHERE "pubs"."id" = $3[0m  [["title", "an arbitrary value"], ["updated_at", "2016-02-29 08:15:20.525369"], ["id", 12]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:15:20.602218"], ["updated_at", "2016-02-29 08:15:20.602218"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:15:20.605092"], ["updated_at", "2016-02-29 08:15:20.605092"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Load (0.6ms)[0m  [1mSELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%gravity%')  ORDER BY created_at DESC[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:15:20.611651"], ["updated_at", "2016-02-29 08:15:20.611651"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:15:20.614111"], ["updated_at", "2016-02-29 08:15:20.614111"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:15:20.618423"], ["updated_at", "2016-02-29 08:15:20.618423"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:15:20.621182"], ["updated_at", "2016-02-29 08:15:20.621182"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:15:20.626854"], ["updated_at", "2016-02-29 08:15:20.626854"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:15:20.629387"], ["updated_at", "2016-02-29 08:15:20.629387"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:15:20.633703"], ["updated_at", "2016-02-29 08:15:20.633703"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:15:20.636160"], ["updated_at", "2016-02-29 08:15:20.636160"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Load (0.5ms)[0m  SELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-29 08:20:07.403642"], ["updated_at", "2016-02-29 08:20:07.403642"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "pubs" SET "title" = $1, "updated_at" = $2 WHERE "pubs"."id" = $3[0m  [["title", "an arbitrary value"], ["updated_at", "2016-02-29 08:20:07.406170"], ["id", 23]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["url", "http://hilpertwunsch.org/twila_ernser"], ["content", "Voluptates sit voluptatem. Molestiae aliquid officia. Non illo facere. Pariatur voluptas rem similique iusto non unde et. Minus inventore autem."], ["created_at", "2016-02-29 08:20:07.528513"], ["updated_at", "2016-02-29 08:20:07.528513"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of evolution"], ["url", "http://heidenreich.biz/zakary"], ["content", "Quis officia sint repellat nostrum. Sint cupiditate optio delectus sint. Iusto ducimus nihil ut dicta."], ["created_at", "2016-02-29 08:20:07.532768"], ["updated_at", "2016-02-29 08:20:07.532768"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Load (0.6ms)[0m  [1mSELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%gravity%')  ORDER BY created_at DESC[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["url", "http://casperspinka.info/deangelo.lueilwitz"], ["content", "Commodi ut totam veniam est aut. Quidem vero recusandae laborum ullam laboriosam. Quia quo doloremque. Soluta vitae vero minima voluptas sed est."], ["created_at", "2016-02-29 08:20:07.540671"], ["updated_at", "2016-02-29 08:20:07.540671"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["url", "http://tromp.co/gaetano"], ["content", "Quisquam cum officiis. Iure iusto magni aut eos corrupti. Beatae odit voluptatem non amet quaerat. Assumenda laboriosam expedita ut enim sint rem. Consequatur ducimus facere ut est officiis."], ["created_at", "2016-02-29 08:20:07.544256"], ["updated_at", "2016-02-29 08:20:07.544256"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["url", "http://dibbertmurazik.co/london"], ["content", "Voluptatem minima sint perferendis aperiam eos beatae eum. Illum dolores aut dolor. Autem in facilis et. Et excepturi inventore."], ["created_at", "2016-02-29 08:20:07.549723"], ["updated_at", "2016-02-29 08:20:07.549723"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["url", "http://schulistheel.org/destini_kemmer"], ["content", "Ut animi quia aut harum iste. Aut eum nihil reiciendis non nulla fugiat qui. Et dicta commodi. Ipsum ipsam consequatur sed odit voluptates suscipit vel. Eum rerum perspiciatis aut molestiae molestiae."], ["created_at", "2016-02-29 08:20:07.553402"], ["updated_at", "2016-02-29 08:20:07.553402"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["url", "http://greenfay.co/lafayette.green"], ["content", "Dolores voluptatem ullam amet iste architecto. Accusantium neque fugit molestiae ratione sunt id. Repudiandae perspiciatis quaerat qui aut non sit. Autem libero dolore sunt."], ["created_at", "2016-02-29 08:20:07.558821"], ["updated_at", "2016-02-29 08:20:07.558821"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["url", "http://torptremblay.net/domingo_pfannerstill"], ["content", "Architecto quod sit non ullam sequi. Rerum aperiam exercitationem non non. Aut reprehenderit dignissimos et odit ipsum id. Libero omnis suscipit maiores veniam optio. Eum magni veniam cumque adipisci."], ["created_at", "2016-02-29 08:20:07.562482"], ["updated_at", "2016-02-29 08:20:07.562482"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["url", "http://ebertfeil.biz/vada"], ["content", "Esse nihil eveniet consequuntur odit. Vero et quia blanditiis ex dolorem. Minus esse iure. Qui consequatur numquam pariatur occaecati iure non."], ["created_at", "2016-02-29 08:20:07.568166"], ["updated_at", "2016-02-29 08:20:07.568166"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["url", "http://schamberger.com/gillian_braun"], ["content", "Repellendus dicta sed. Unde magnam veritatis odio tempora eius velit. Veniam praesentium vel. Tenetur vel enim dolores. Maiores adipisci sit ipsum."], ["created_at", "2016-02-29 08:20:07.572808"], ["updated_at", "2016-02-29 08:20:07.572808"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Load (0.4ms)[0m  SELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-29 08:20:52.031639"], ["updated_at", "2016-02-29 08:20:52.031639"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "pubs" SET "title" = $1, "updated_at" = $2 WHERE "pubs"."id" = $3[0m  [["title", "an arbitrary value"], ["updated_at", "2016-02-29 08:20:52.034760"], ["id", 34]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["url", "http://roobbauch.name/camren_howell"], ["content", "Vel fuga neque doloribus qui facilis. Aut earum cum. Molestias ad quo ducimus. Fugiat doloribus inventore nobis."], ["created_at", "2016-02-29 08:20:52.119401"], ["updated_at", "2016-02-29 08:20:52.119401"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of evolution"], ["url", "http://schumm.org/moshe.ledner"], ["content", "Aliquam atque numquam voluptatem. Optio tempora quaerat quos eum fugit. Accusamus quo aut architecto dolore voluptas aut et. Cumque nisi non modi facere quibusdam quo dolores."], ["created_at", "2016-02-29 08:20:52.123584"], ["updated_at", "2016-02-29 08:20:52.123584"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Load (0.6ms)[0m  [1mSELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%gravity%')  ORDER BY created_at DESC[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["url", "http://koelpinfriesen.name/johnpaul"], ["content", "Laboriosam est qui sit sunt error enim harum. Non unde non rem blanditiis laboriosam. Ex dicta ducimus autem eum. Est aut aperiam quod et sed vitae."], ["created_at", "2016-02-29 08:20:52.132803"], ["updated_at", "2016-02-29 08:20:52.132803"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["url", "http://willms.com/charley"], ["content", "Quod facere consequuntur assumenda. Enim odio quia. Voluptas illo ullam."], ["created_at", "2016-02-29 08:20:52.137962"], ["updated_at", "2016-02-29 08:20:52.137962"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["url", "http://hagenes.co/anibal"], ["content", "Aut temporibus quia veniam. Occaecati sequi tempora nesciunt enim eum quis rerum. Adipisci corporis cupiditate et magnam et facere. Velit expedita ut."], ["created_at", "2016-02-29 08:20:52.143777"], ["updated_at", "2016-02-29 08:20:52.143777"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["url", "http://runolfon.net/leo"], ["content", "Cumque qui expedita ipsa beatae ad quos aliquam. Officiis aliquid ea. Accusamus quia sed repellat perferendis sed eaque doloremque. Incidunt omnis quod. Fugiat et at ipsa."], ["created_at", "2016-02-29 08:20:52.147446"], ["updated_at", "2016-02-29 08:20:52.147446"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["url", "http://leschfunk.info/roie_nienow"], ["content", "Qui harum aut et voluptatem in. Enim qui sint rerum debitis. Saepe excepturi et earum et. Praesentium in nihil molestiae omnis. Quae totam porro molestias et."], ["created_at", "2016-02-29 08:20:52.153227"], ["updated_at", "2016-02-29 08:20:52.153227"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["url", "http://stammcronin.co/amari.lueilwitz"], ["content", "Necessitatibus animi sit dolores sed maxime rerum eum. Ut repudiandae ipsam cupiditate nam sed. Vel tempora perferendis aspernatur voluptate sed occaecati."], ["created_at", "2016-02-29 08:20:52.156788"], ["updated_at", "2016-02-29 08:20:52.156788"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["url", "http://bayer.co/kip_jast"], ["content", "Voluptatibus est ut porro dolore. Dolor nisi consectetur minus quia sint. Officia placeat dolore sunt reiciendis. Voluptatem sed dolorem qui culpa. Ut cum molestias accusantium repellat minus in mollitia."], ["created_at", "2016-02-29 08:20:52.162263"], ["updated_at", "2016-02-29 08:20:52.162263"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["url", "http://heathcote.io/crystel"], ["content", "Maiores officiis occaecati. Dolorem aspernatur blanditiis pariatur reiciendis molestias sequi. Ut et et eligendi ea quam. Dolores numquam et omnis."], ["created_at", "2016-02-29 08:20:52.165769"], ["updated_at", "2016-02-29 08:20:52.165769"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Load (0.5ms)[0m  SELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-29 08:22:04.717339"], ["updated_at", "2016-02-29 08:22:04.717339"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "pubs" SET "title" = $1, "updated_at" = $2 WHERE "pubs"."id" = $3[0m  [["title", "an arbitrary value"], ["updated_at", "2016-02-29 08:22:04.719976"], ["id", 45]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mPub Exists (0.5ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["url", "http://corwin.net/dee.johns"], ["content", "Voluptatem voluptas est maiores praesentium. Natus esse aliquid modi dolores ullam. Et natus ducimus eius voluptas aut. Reiciendis voluptatem deleniti. Corrupti qui deserunt."], ["created_at", "2016-02-29 08:22:04.757916"], ["updated_at", "2016-02-29 08:22:04.757916"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of evolution"], ["url", "http://mohrstamm.io/irving"], ["content", "Recusandae dignissimos similique ut aut sapiente officia. Repellendus error aut necessitatibus labore. Vero eligendi molestiae eum rerum dolor ea. Delectus tenetur rerum eaque."], ["created_at", "2016-02-29 08:22:04.762405"], ["updated_at", "2016-02-29 08:22:04.762405"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Load (0.5ms)[0m  [1mSELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%gravity%')  ORDER BY created_at DESC[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["url", "http://zulauf.net/heaven"], ["content", "Et dolorem eum. Iste quaerat porro earum. Repudiandae ducimus aliquid consequatur aspernatur ut pariatur."], ["created_at", "2016-02-29 08:22:04.769521"], ["updated_at", "2016-02-29 08:22:04.769521"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["url", "http://howe.info/maud"], ["content", "Dolorem aspernatur distinctio et saepe libero iste. Temporibus expedita blanditiis vero. Eius delectus dolorum."], ["created_at", "2016-02-29 08:22:04.772963"], ["updated_at", "2016-02-29 08:22:04.772963"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36m (19.9ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["url", "http://kreiger.org/elwyn"], ["content", "Hic qui quia fugit voluptatibus voluptas. Tempora laudantium et eligendi qui porro debitis. Eveniet dolorem ipsum repudiandae natus sunt sapiente fuga. Numquam necessitatibus molestiae ad explicabo repellendus animi quo."], ["created_at", "2016-02-29 08:22:04.802857"], ["updated_at", "2016-02-29 08:22:04.802857"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["url", "http://maggio.name/briana_ebert"], ["content", "Voluptatum ex et. Qui non nemo ea eligendi. Repudiandae aut facilis. Molestiae dolorem rerum dolor facilis illo cumque harum."], ["created_at", "2016-02-29 08:22:04.807081"], ["updated_at", "2016-02-29 08:22:04.807081"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["url", "http://osinski.io/kaylah.waters"], ["content", "Maxime blanditiis commodi id tempore culpa ullam aut. Rerum eveniet neque sed laborum quia veniam non. Ut eius molestiae iste. Corrupti et aliquid velit facere. Perferendis quae rem autem labore."], ["created_at", "2016-02-29 08:22:04.813200"], ["updated_at", "2016-02-29 08:22:04.813200"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["url", "http://macgyverzemlak.biz/fatima.white"], ["content", "Quo eligendi eum nisi blanditiis. At consequatur consectetur aut natus explicabo. Sunt dolorem nesciunt. Quod rerum sint ut magnam quae. Quasi dicta ex."], ["created_at", "2016-02-29 08:22:04.816737"], ["updated_at", "2016-02-29 08:22:04.816737"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["url", "http://denesik.com/kellen"], ["content", "Dolor quidem eum inventore. Optio rerum laborum et sit harum dolor est. Et eos a sit qui veritatis."], ["created_at", "2016-02-29 08:22:04.822147"], ["updated_at", "2016-02-29 08:22:04.822147"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["url", "http://welchhuel.name/alivia_schultz"], ["content", "Est totam aut. Autem ut eius et quisquam quia incidunt. Rerum libero voluptatem quidem commodi nulla et."], ["created_at", "2016-02-29 08:22:04.825600"], ["updated_at", "2016-02-29 08:22:04.825600"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Load (0.4ms)[0m  SELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "pubs" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-29 08:25:18.747102"], ["updated_at", "2016-02-29 08:25:18.747102"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "pubs" SET "title" = $1, "updated_at" = $2 WHERE "pubs"."id" = $3[0m  [["title", "an arbitrary value"], ["updated_at", "2016-02-29 08:25:18.798770"], ["id", 56]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:25:18.826948"], ["updated_at", "2016-02-29 08:25:18.826948"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:25:18.829534"], ["updated_at", "2016-02-29 08:25:18.829534"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Load (0.6ms)[0m  [1mSELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%gravity%')  ORDER BY created_at DESC[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:25:18.835623"], ["updated_at", "2016-02-29 08:25:18.835623"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:25:18.838080"], ["updated_at", "2016-02-29 08:25:18.838080"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Load (0.2ms)[0m  SELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%relativity%')  ORDER BY created_at DESC
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:25:18.842789"], ["updated_at", "2016-02-29 08:25:18.842789"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:25:18.845152"], ["updated_at", "2016-02-29 08:25:18.845152"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%lution%')  ORDER BY created_at DESC[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:25:18.850485"], ["updated_at", "2016-02-29 08:25:18.850485"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:25:18.852793"], ["updated_at", "2016-02-29 08:25:18.852793"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Load (0.3ms)[0m  SELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%theory%')  ORDER BY created_at DESC
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:25:18.908909"], ["updated_at", "2016-02-29 08:25:18.908909"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:25:18.911488"], ["updated_at", "2016-02-29 08:25:18.911488"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Load (0.4ms)[0m  SELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-29 08:27:08.924731"], ["updated_at", "2016-02-29 08:27:08.924731"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "pubs" SET "title" = $1, "updated_at" = $2 WHERE "pubs"."id" = $3[0m  [["title", "an arbitrary value"], ["updated_at", "2016-02-29 08:27:08.978154"], ["id", 67]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:27:09.006258"], ["updated_at", "2016-02-29 08:27:09.006258"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:27:09.008991"], ["updated_at", "2016-02-29 08:27:09.008991"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Load (0.6ms)[0m  [1mSELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%gravity%')  ORDER BY created_at DESC[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:27:09.014938"], ["updated_at", "2016-02-29 08:27:09.014938"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:27:09.017371"], ["updated_at", "2016-02-29 08:27:09.017371"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Load (0.3ms)[0m  SELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%relativity%')  ORDER BY created_at DESC
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:27:09.022212"], ["updated_at", "2016-02-29 08:27:09.022212"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.4ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:27:09.024928"], ["updated_at", "2016-02-29 08:27:09.024928"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%lution%')  ORDER BY created_at DESC[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:27:09.030112"], ["updated_at", "2016-02-29 08:27:09.030112"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:27:09.032588"], ["updated_at", "2016-02-29 08:27:09.032588"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Load (0.5ms)[0m  SELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%theory%')  ORDER BY created_at DESC
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:27:09.055296"], ["updated_at", "2016-02-29 08:27:09.055296"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:27:09.057919"], ["updated_at", "2016-02-29 08:27:09.057919"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPub Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPub Load (0.4ms)[0m  SELECT  "pubs".* FROM "pubs"  ORDER BY "pubs"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pubs" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-02-29 08:31:06.756234"], ["updated_at", "2016-02-29 08:31:06.756234"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "pubs" SET "title" = $1, "updated_at" = $2 WHERE "pubs"."id" = $3[0m  [["title", "an arbitrary value"], ["updated_at", "2016-02-29 08:31:06.810213"], ["id", 78]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:31:06.838449"], ["updated_at", "2016-02-29 08:31:06.838449"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:31:06.841487"], ["updated_at", "2016-02-29 08:31:06.841487"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Load (0.6ms)[0m  [1mSELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%gravity%')  ORDER BY created_at DESC[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:31:06.847814"], ["updated_at", "2016-02-29 08:31:06.847814"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:31:06.850397"], ["updated_at", "2016-02-29 08:31:06.850397"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Load (0.3ms)[0m  SELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%relativity%')  ORDER BY created_at DESC
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:31:06.855389"], ["updated_at", "2016-02-29 08:31:06.855389"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.3ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:31:06.857908"], ["updated_at", "2016-02-29 08:31:06.857908"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPub Load (0.3ms)[0m  [1mSELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%lution%')  ORDER BY created_at DESC[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:31:06.863304"], ["updated_at", "2016-02-29 08:31:06.863304"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPub Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:31:06.865817"], ["updated_at", "2016-02-29 08:31:06.865817"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Load (0.3ms)[0m  SELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%theory%')  ORDER BY created_at DESC
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of relativity' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of relativity"], ["content", "cool theory"], ["url", "www.google.com"], ["created_at", "2016-02-29 08:31:06.872517"], ["updated_at", "2016-02-29 08:31:06.872517"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'theory of evolution' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "pubs" ("title", "content", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "theory of evolution"], ["content", "we come from monkeys"], ["url", "www.yahoo.com"], ["created_at", "2016-02-29 08:31:06.874932"], ["updated_at", "2016-02-29 08:31:06.874932"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'wilhelmine@cummings.name' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'wilhelmine@cummings.name' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("password_digest", "email", "full_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["password_digest", "$2a$04$5VSV9IGlZ8lJtU096Ojw9eeYkK5YQATmu5YwH3w1p8DWmr5YRNVZK"], ["email", "wilhelmine@cummings.name"], ["full_name", "Mrs. Jimmie Larson"], ["created_at", "2016-02-29 08:34:59.120568"], ["updated_at", "2016-02-29 08:34:59.120568"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.4ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'evolution' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPub Exists (0.2ms)[0m  SELECT  1 AS one FROM "pubs" WHERE "pubs"."title" = 'evolution' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pubs" ("title", "url", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "evolution"], ["url", "http://reichert.biz/arielle_reilly"], ["content", "Quod sed debitis sint. Odit adipisci qui consequatur dolores pariatur. Sed totam enim sunt illo quidem fugiat. Animi soluta hic optio neque. Itaque nihil exercitationem repellat."], ["created_at", "2016-02-29 08:34:59.137616"], ["updated_at", "2016-02-29 08:34:59.137616"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by PubsController#search as HTML
+  Parameters: {"search_term"=>"evolution"}
+  Rendered pubs/search.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 83ms (Views: 82.1ms | ActiveRecord: 0.0ms)
+  [1m[36mPub Load (0.9ms)[0m  [1mSELECT "pubs".* FROM "pubs" WHERE (title ILIKE '%evolution%')  ORDER BY created_at DESC[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK

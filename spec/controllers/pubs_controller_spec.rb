@@ -59,4 +59,12 @@ describe PubsController do
       expect(assigns(:review)).to be_instance_of(Review)
     end
   end
+  describe "POST search" do
+    it "sets @results for authenticated users" do 
+      session[:user_id] = Fabricate(:user).id 
+      pub = Fabricate(:pub, title: "evolution")
+      post :search, search_term: "evolution"
+      expect(assigns(:results)).to eq([pub])
+    end
+  end
 end

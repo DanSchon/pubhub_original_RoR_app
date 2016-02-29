@@ -19,4 +19,7 @@ class PubsController < ApplicationController
     @pub = Pub.find(params[:id])
     @review = Review.new
   end
+  def search
+    @results = Pub.search_by_title(params[:search_term])
+  end
 end

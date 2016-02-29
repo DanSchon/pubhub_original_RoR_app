@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create]
   resources :pubs, only: [:new, :create, :show] do 
     resources :reviews, only: [:create]
+    collection do 
+      post '/search', to: 'pubs#search'
+    end
   end
   resources :relationships, only: [:create]
 end

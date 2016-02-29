@@ -1,6 +1,7 @@
-<%= render 'shared/header', header: "Featured Pubs" %>
-  <% @pubs.each do |pub| %>
-    <li class="well">
+<%= render 'shared/header', header: "Search Results:" %>
+<ul class="well">
+  <% @results.each do |pub| %>
+    <li>
       <%= link_to pub.title, pub %>
       <p>posted by <%= link_to pub.user.full_name, pub.user %>. <%= link_to "PDF", fix_url(pub.url) %></p>
     </li>

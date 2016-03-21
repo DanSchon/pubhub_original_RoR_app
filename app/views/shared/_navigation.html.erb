@@ -15,7 +15,6 @@
           <li><%= link_to "Home", home_path %></li>
           <li><%= link_to "Profile", current_user %></li>
           <li><%= link_to "Following", following_path %></li>
-          <li><%= link_to "Upload a Pub!", new_pub_path %></li>
         </ul>
         <%= form_tag search_pubs_path, class: "navbar-form navbar-left" do %>
           <input class="form-control" name="search_term" type="text" placeholder="Search pubs by title">
@@ -35,3 +34,6 @@
     <% end %>
   </div>
 </nav>
+
+
+

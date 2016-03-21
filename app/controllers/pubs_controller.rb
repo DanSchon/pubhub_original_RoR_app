@@ -1,8 +1,6 @@
 class PubsController < ApplicationController
   def index
     @pubs = Pub.all
-  end
-  def new
     @pub = Pub.new
   end
   def create

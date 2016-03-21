@@ -1,4 +1,6 @@
-<%= render 'shared/header', header: "Featured Pubs" %>
+<div class="page-header">
+  <h1>Featured Pubs:<button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">Upload Pub!</button></h1>
+</div>        
   <% @pubs.each do |pub| %>
     <li class="well">
       <%= link_to pub.title, pub %>
@@ -6,3 +8,35 @@
     </li>
   <% end %>
 </ul>
+
+
+<!-- Modal -->
+<%= form_for(@pub) do |f| %>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">New Publication</h4>
+      </div>
+      <div class="modal-body">
+        <div class="field">
+            <%= f.label :title, "Title" %><br>
+            <%= f.text_area :title, class: "form-control" %>
+        </div>
+        <div class="field">
+            <%= f.label :content, "Abstract" %><br>
+            <%= f.text_area :content, rows: 5, class: "form-control" %>
+        </div>
+        <div class="field">
+            <%= f.label :url, "PDF url" %><br>
+            <%= f.text_area :url, class: "form-control" %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= submit_tag "Upload Pub", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
